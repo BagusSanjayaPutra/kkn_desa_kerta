@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/katalog",
+      "destination": "/pages/katalog"
+    },
+    {
+      "source": "/detail",
+      "destination": "/pages/detail"
+    },
+    {
+      "source": "/peta",
+      "destination": "/pages/peta"
+    },
+    {
+      "source": "/galeri",
+      "destination": "/pages/galeri"
+    },
+    {
+      "source": "/tentang",
+      "destination": "/pages/tentang"
+    },
+    {
+      "source": "/admin",
+      "destination": "/pages/admin/index"
+    },
+    {
+      "source": "/admin/login",
+      "destination": "/pages/admin/login"
+    },
+    {
+      "source": "/admin/objek-wisata",
+      "destination": "/pages/admin/objek-wisata"
+    },
+    {
+      "source": "/admin/galeri",
+      "destination": "/pages/admin/galeri"
+    },
+    {
+      "source": "/admin/kategori",
+      "destination": "/pages/admin/kategori"
+    },
+    {
+      "source": "/admin/peta",
+      "destination": "/pages/admin/peta"
+    },
+    {
+      "source": "/admin/pengaturan",
+      "destination": "/pages/admin/pengaturan"
+    },
+    {
+      "source": "/objek-wisata",
+      "destination": "/pages/admin/objek-wisata"
+    },
+    {
+      "source": "/kategori",
+      "destination": "/pages/admin/kategori"
+    },
+    {
+      "source": "/pengaturan",
+      "destination": "/pages/admin/pengaturan"
+    },
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/[...path]"
+    }
+  ]
+}

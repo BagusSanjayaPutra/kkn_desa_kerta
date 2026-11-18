@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pengelolaan Galeri &amp; Foto — Admin CMS Desa Kerta</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/css/admin.css" />
+  <style>
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .photo-card {
+      background: #FFFFFF;
+      border: 1px solid var(--admin-border);
+      border-radius: var(--admin-radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--admin-shadow-sm);
+    }
+    .photo-card-img-wrapper {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      background: #EBF0EC;
+      overflow: hidden;
+    }
+    .photo-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .photo-card-body {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .photo-card-caption {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--admin-primary-dark);
+      margin-bottom: 0.25rem;
+    }
+    .photo-card-dest {
+      font-size: 0.775rem;
+      color: var(--admin-text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .photo-card-footer {
+      border-top: 1px solid var(--admin-border-light);
+      padding-top: 0.75rem;
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
+    }
+  </style>
+</head>
+<body class="admin-body">
+
+  <!-- Sidebar Navigasi -->
+  <aside class="admin-sidebar">
+    <a href="/admin" class="sidebar-brand">
+      <img src="/assets/images/brand/logo.svg" alt="Logo Desa Kerta" class="sidebar-brand-img" />
+      <div class="sidebar-brand-text">
+        <h2>Desa Kerta</h2>
+        <span>ADMIN CMS</span>
+      </div>
+    </a>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-item">
+        <a href="/admin">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+          Dashboard
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="/admin/objek-wisata">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          Objek Wisata
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="/admin/galeri" class="active">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+          Galeri &amp; Foto
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="/admin/kategori">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="8" y1="6" x2="21" y2="6"></line>
+            <line x1="8" y1="12" x2="21" y2="12"></line>
+            <line x1="8" y1="18" x2="21" y2="18"></line>
+            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+          </svg>
+          Kategori Wisata
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="/admin/peta">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+            <line x1="8" y1="2" x2="8" y2="18"></line>
+            <line x1="16" y1="6" x2="16" y2="22"></line>
+          </svg>
+          Peta &amp; Koordinat
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="/admin/pengaturan">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+          Pengaturan
+        </a>
+      </li>
+      <li class="sidebar-item" style="margin-top:auto; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.08);">
+        <a href="/" target="_blank" rel="noopener noreferrer">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+          Lihat Website Publik &nearr;
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="user-avatar">AD</div>
+        <div class="user-details">
+          <div class="user-name">Administrator</div>
+          <div class="user-role">Pengelola Konten</div>
+        </div>
+      </div>
+      <button id="btn-admin-logout" title="Keluar dari CMS" style="color:#B2C4B9; background:none; border:none; cursor:pointer;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <polyline points="16 17 21 12 16 7"></polyline>
+          <line x1="21" y1="12" x2="9" y2="12"></line>
+        </svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Area Konten Utama -->
+  <div class="admin-main">
+    <header class="admin-topbar">
+      <div class="topbar-left">
+        <button class="sidebar-toggle-btn" aria-label="Toggle Sidebar">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <div class="admin-breadcrumbs">
+          <a href="/admin">CMS</a>
+          <span>/</span>
+          <strong style="color:var(--admin-primary-dark);">Pengelolaan Galeri &amp; Foto</strong>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <button id="btn-open-upload-modal" class="btn-admin btn-admin-primary btn-admin-sm">
+          + Unggah Foto Baru
+        </button>
+      </div>
+    </header>
+
+    <main class="admin-content">
+      <div style="margin-bottom:1.5rem;">
+        <h1 style="font-size:1.5rem; font-weight:800; color:var(--admin-primary-dark);">Galeri Foto Dokumentasi</h1>
+        <p style="font-size:0.875rem; color:var(--admin-text-muted);">
+          Unggah foto dokumentasi asli, tetapkan objek wisata terkait, dan simpan secara permanen di server.
+        </p>
+      </div>
+
+      <!-- Grid Foto Terdaftar -->
+      <div class="photo-grid" id="admin-photo-grid">
+        <div style="grid-column: 1 / -1; text-align:center; padding:3rem; color:var(--admin-text-muted);">
+          Memuat dokumentasi foto...
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- MODAL UNGGAH FOTO -->
+  <div class="admin-modal-overlay" id="upload-modal">
+    <div class="admin-modal" style="max-width:600px;">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title">Unggah Foto Dokumentasi Lapangan</h3>
+        <button type="button" class="btn-close-modal" id="btn-close-upload-modal" style="background:none; border:none; font-size:1.5rem; cursor:pointer; color:var(--admin-text-muted);">&times;</button>
+      </div>
+
+      <form id="upload-photo-form">
+        <div class="admin-modal-body">
+          <div class="form-group">
+            <label for="upload-target-dest" class="form-label">Tautkan ke Objek Wisata <span style="color:#C62828;">*</span></label>
+            <select id="upload-target-dest" class="form-control" required></select>
+            <div class="form-help">Pilih destinasi yang dokumentasinya akan ditambahkan.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="upload-file-input" class="form-label">Pilih Berkas Foto (JPG, PNG, WebP - Maks 5MB) <span style="color:#C62828;">*</span></label>
+            <input type="file" id="upload-file-input" class="form-control" accept="image/jpeg,image/png,image/webp,image/svg+xml" required />
+          </div>
+
+          <!-- Pratinjau Foto Sebelum Simpan -->
+          <div id="upload-preview-wrapper" style="display:none; margin-bottom:1.25rem;">
+            <label class="form-label">Pratinjau Foto:</label>
+            <div style="aspect-ratio:16/10; max-height:220px; background:#000; border-radius:8px; overflow:hidden; display:flex; align-items:center; justify-content:center;">
+              <img id="upload-preview-img" src="" alt="Pratinjau Foto" style="max-height:100%; max-width:100%; object-fit:contain;" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="upload-caption" class="form-label">Keterangan / Caption Foto <span style="color:#C62828;">*</span></label>
+            <input type="text" id="upload-caption" class="form-control" required placeholder="Contoh: Formasi tebing akar pohon Taep di Munduk Asri" />
+          </div>
+
+          <div class="form-group">
+            <label for="upload-source" class="form-label">Atribusi / Sumber Foto <span style="color:#C62828;">*</span></label>
+            <input type="text" id="upload-source" class="form-control" required value="Dokumentasi Lapangan Tim KKN Desa Kerta" />
+          </div>
+
+          <div class="form-group" style="display:flex; align-items:center; gap:0.5rem;">
+            <input type="checkbox" id="upload-is-primary" style="width:18px; height:18px;" />
+            <label for="upload-is-primary" style="font-size:0.875rem; font-weight:600; cursor:pointer;">
+              Jadikan Sebagai Foto Utama Kartu Wisata
+            </label>
+          </div>
+        </div>
+
+        <div class="admin-modal-footer">
+          <button type="button" class="btn-admin btn-admin-outline" id="btn-cancel-upload">Batal</button>
+          <button type="submit" class="btn-admin btn-admin-primary" id="btn-submit-upload">Unggah &amp; Simpan Permanen</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/assets/js/admin-api.js"></script>
+  <script src="/assets/js/admin-auth.js"></script>
+  <script>
+    let allDestinations = [];
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      await loadGalleryData();
+      initUploadModal();
+    });
+
+    async function loadGalleryData() {
+      const res = await API.get('/api/destinations?all=true');
+      const grid = document.getElementById('admin-photo-grid');
+      const selectDest = document.getElementById('upload-target-dest');
+
+      if (res && res.ok && Array.isArray(res.data)) {
+        allDestinations = res.data;
+
+        // Opsi dropdown
+        selectDest.innerHTML = allDestinations.map(d => `<option value="${d.id}">${d.name} (${d.id})</option>`).join('');
+
+        const photosList = [];
+        allDestinations.forEach(d => {
+          if (Array.isArray(d.photos)) {
+            d.photos.forEach((p, idx) => {
+              photosList.push({
+                ...p,
+                destId: d.id,
+                destName: d.name,
+                photoIndex: idx
+              });
+            });
+          }
+        });
+
+        if (photosList.length === 0) {
+          grid.innerHTML = `<div style="grid-column: 1 / -1; text-align:center; padding:3rem; color:var(--admin-text-muted);">Belum ada foto yang tersimpan. Klik "+ Unggah Foto Baru" untuk menambahkan.</div>`;
+          return;
+        }
+
+        grid.innerHTML = photosList.map(item => {
+          const isFileProto = typeof window !== 'undefined' && window.location.protocol === 'file:';
+          const cleanU = item.url.replace(/^(\.\.\/|\.\/|\/)/, '');
+          const displayUrl = item.url.startsWith('http') ? item.url : (isFileProto ? `../../${cleanU}` : `/${cleanU}`);
+          const fallbackImg = isFileProto ? '../../assets/images/destinations/munduk-asri-1.svg' : '/assets/images/destinations/munduk-asri-1.svg';
+          const isPrimary = item.photoIndex === 0;
+
+          return `
+            <div class="photo-card">
+              <div class="photo-card-img-wrapper">
+                <img src="${displayUrl}" alt="${AdminUI.escapeHtml(item.caption || '')}" class="photo-card-img" onerror="this.src='${fallbackImg}'" />
+                ${isPrimary ? '<span style="position:absolute; top:8px; left:8px; background:#1C382B; color:white; font-size:0.7rem; font-weight:700; padding:2px 8px; border-radius:4px;">Foto Utama</span>' : ''}
+              </div>
+              <div class="photo-card-body">
+                <div class="photo-card-caption">${AdminUI.escapeHtml(item.caption || 'Tanpa keterangan')}</div>
+                <div class="photo-card-dest">${AdminUI.escapeHtml(item.destName)} (<code>${item.destId}</code>)</div>
+                <div class="photo-card-footer">
+                  <span style="color:var(--admin-text-subtle);">Sumber: ${AdminUI.escapeHtml(item.source || 'KKN')}</span>
+                  <button class="btn-admin btn-admin-danger btn-admin-sm btn-delete-photo" data-dest-id="${item.destId}" data-photo-idx="${item.photoIndex}">
+                    Hapus
+                  </button>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+    }
+
+    function initUploadModal() {
+      const modal = document.getElementById('upload-modal');
+      const openBtn = document.getElementById('btn-open-upload-modal');
+      const closeBtn = document.getElementById('btn-close-upload-modal');
+      const cancelBtn = document.getElementById('btn-cancel-upload');
+      const fileInput = document.getElementById('upload-file-input');
+      const previewWrapper = document.getElementById('upload-preview-wrapper');
+      const previewImg = document.getElementById('upload-preview-img');
+      const form = document.getElementById('upload-photo-form');
+
+      openBtn.addEventListener('click', () => {
+        form.reset();
+        previewWrapper.style.display = 'none';
+        modal.classList.add('active');
+      });
+
+      const closeModal = () => {
+        modal.classList.remove('active');
+        form.reset();
+        previewWrapper.style.display = 'none';
+      };
+
+      closeBtn.addEventListener('click', closeModal);
+      cancelBtn.addEventListener('click', closeModal);
+
+      // Pratinjau saat memilih berkas
+      fileInput.addEventListener('change', () => {
+        const file = fileInput.files[0];
+        if (file) {
+          if (file.size > 5 * 1024 * 1024) {
+            AdminUI.toast('Ukuran file maksimal 5 MB!', 'error');
+            fileInput.value = '';
+            previewWrapper.style.display = 'none';
+            return;
+          }
+          const reader = new FileReader();
+          reader.onload = e => {
+            previewImg.src = e.target.result;
+            previewWrapper.style.display = 'block';
+          };
+          reader.readAsDataURL(file);
+        } else {
+          previewWrapper.style.display = 'none';
+        }
+      });
+
+      // Submit form unggah
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const file = fileInput.files[0];
+        const destId = document.getElementById('upload-target-dest').value;
+        const caption = document.getElementById('upload-caption').value.trim();
+        const source = document.getElementById('upload-source').value.trim();
+        const isPrimary = document.getElementById('upload-is-primary').checked;
+        const submitBtn = document.getElementById('btn-submit-upload');
+
+        if (!file || !destId || !caption || !source) {
+          AdminUI.toast('Semua kolom bertanda bintang wajib diisi!', 'error');
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Mengunggah ke server...';
+
+        try {
+          // 1. Upload file ke server secara permanen
+          const uploadRes = await API.uploadPhoto(file);
+          if (!uploadRes || !uploadRes.ok || !uploadRes.url) {
+            throw new Error(uploadRes.error || 'Gagal mengunggah berkas gambar.');
+          }
+
+          const photoObj = {
+            url: uploadRes.url,
+            caption: caption,
+            source: source
+          };
+
+          // 2. Hubungkan foto baru ke objek wisata terkait
+          const dest = allDestinations.find(d => d.id === destId);
+          if (!dest) throw new Error('Objek wisata tidak ditemukan.');
+
+          let updatedPhotos = Array.isArray(dest.photos) ? [...dest.photos] : [];
+          if (isPrimary) {
+            updatedPhotos.unshift(photoObj); // Jadi foto utama paling depan
+          } else {
+            updatedPhotos.push(photoObj);
+          }
+
+          const updateRes = await API.put(`/api/destinations/${encodeURIComponent(destId)}`, {
+            photos: updatedPhotos
+          });
+
+          if (!updateRes || !updateRes.ok) {
+            throw new Error(updateRes.error || 'Gagal menyimpan metadata foto.');
+          }
+
+          AdminUI.toast('Foto berhasil diunggah dan disimpan permanen!', 'success');
+          closeModal();
+          await loadGalleryData();
+        } catch (err) {
+          AdminUI.toast(err.message, 'error');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Unggah & Simpan Permanen';
+        }
+      });
+
+      // Delegasi Hapus Foto
+      document.getElementById('admin-photo-grid').addEventListener('click', async (e) => {
+        const deleteBtn = e.target.closest('.btn-delete-photo');
+        if (deleteBtn) {
+          const destId = deleteBtn.getAttribute('data-dest-id');
+          const photoIdx = parseInt(deleteBtn.getAttribute('data-photo-idx'), 10);
+
+          if (confirm('Apakah Anda yakin ingin menghapus foto ini dari objek wisata?')) {
+            const dest = allDestinations.find(d => d.id === destId);
+            if (dest && Array.isArray(dest.photos)) {
+              const updatedPhotos = [...dest.photos];
+              updatedPhotos.splice(photoIdx, 1);
+
+              const res = await API.put(`/api/destinations/${encodeURIComponent(destId)}`, {
+                photos: updatedPhotos
+              });
+
+              if (res && res.ok) {
+                AdminUI.toast('Foto berhasil dihapus.', 'success');
+                await loadGalleryData();
+              } else {
+                AdminUI.toast(res.error || 'Gagal menghapus foto.', 'error');
+              }
+            }
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>

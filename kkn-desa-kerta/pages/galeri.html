@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galeri Dokumentasi — Jelajah Desa Kerta, Payangan</title>
+  <meta name="description" content="Dokumentasi visual lanskap alam, cagar budaya purbakala, pura bersejarah, dan perkebunan jeruk di Desa Kerta, Payangan, Gianyar." />
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- App Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/components.css" />
+  <style>
+    /* Modal Lightbox */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(14, 30, 21, 0.92);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 1.5rem;
+    }
+
+    .lightbox-content-box {
+      max-width: 900px;
+      width: 100%;
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+      position: relative;
+    }
+
+    .lightbox-img-wrapper {
+      width: 100%;
+      max-height: 70vh;
+      background: #000000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-img-wrapper img {
+      max-height: 70vh;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .lightbox-info {
+      padding: 1.25rem 1.5rem;
+      background: #FFFFFF;
+    }
+
+    .lightbox-close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(0, 0, 0, 0.6);
+      color: #FFFFFF;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      cursor: pointer;
+      z-index: 10;
+      transition: background 0.2s;
+    }
+
+    .lightbox-close-btn:hover {
+      background: rgba(0, 0, 0, 0.9);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Banner Transparansi & Integritas Data KKN -->
+  <aside class="kkn-disclaimer-banner" role="complementary">
+    <span>📌 <strong>Dokumentasi Lapangan</strong> — Foto dan visual disajikan dengan atribusi sumber yang jelas dan transparan.</span>
+  </aside>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Navigasi Utama">
+        <a href="/" class="brand-link" aria-label="Beranda Jelajah Desa Kerta">
+          <img src="/assets/images/brand/logo.svg" alt="Logo Jelajah Desa Kerta" class="brand-logo-img" />
+        </a>
+
+        <button class="nav-toggle" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="main-nav-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-menu" id="main-nav-menu">
+          <li><a href="/" class="nav-link">Beranda</a></li>
+          <li><a href="/katalog" class="nav-link">Katalog Wisata</a></li>
+          <li><a href="/peta" class="nav-link">Peta Interaktif</a></li>
+          <li><a href="/galeri" class="nav-link active">Galeri</a></li>
+          <li><a href="/tentang" class="nav-link">Tentang KKN</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="section">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <div class="section-header">
+        <span class="section-eyebrow">Dokumentasi Visual</span>
+        <h1 class="section-title">Galeri Potensi &amp; Alam Desa Kerta</h1>
+        <p class="section-desc">
+          Kumpulan dokumentasi visual dari hasil survei lapangan mahasiswa KKN serta publikasi resmi desa yang merekam keindahan lanskap, warisan budaya, dan geliat agrowisata perkebunan rakyat.
+        </p>
+      </div>
+
+      <!-- Filter Kategori Galeri -->
+      <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:2.5rem; align-items:center;">
+        <span style="font-size:0.8125rem; font-weight:600; color:var(--color-text-muted); margin-right:0.35rem;">Filter Galeri:</span>
+        <button class="filter-pill active" data-gallery-filter="all">Semua Foto</button>
+        <button class="filter-pill" data-gallery-filter="alam">Wisata Alam</button>
+        <button class="filter-pill" data-gallery-filter="budaya">Cagar Budaya</button>
+        <button class="filter-pill" data-gallery-filter="religi">Wisata Religi</button>
+        <button class="filter-pill" data-gallery-filter="agro">Agrowisata</button>
+      </div>
+
+      <!-- Grid Galeri Foto -->
+      <div class="cards-grid" id="gallery-grid">
+        <!-- Diisi secara dinamis oleh assets/js/galeri.js -->
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Lightbox Modal Viewer -->
+  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Pratinjau Foto">
+    <div class="lightbox-content-box">
+      <button class="lightbox-close-btn" id="lightbox-close" aria-label="Tutup pratinjau foto">&times;</button>
+      <div class="lightbox-img-wrapper">
+        <img id="lightbox-img" src="" alt="Pratinjau Foto Penuh" />
+      </div>
+      <div class="lightbox-info">
+        <p id="lightbox-caption" style="font-size:0.9375rem; color:var(--color-text-main); font-weight:500;"></p>
+        <span style="font-size:0.775rem; color:var(--color-text-subtle);">Gunakan tombol ESC atau klik di luar untuk menutup viewer.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Jelajah Desa Kerta</h3>
+          <p class="footer-desc">
+            Dokumentasi terbuka potensi pariwisata Desa Kerta, Payangan, Gianyar berbasis observasi lapangan mahasiswa KKN.
+          </p>
+          <div style="font-size:0.8125rem;">
+            Website Resmi Desa: <br />
+            <a href="https://kerta.desa.id" target="_blank" rel="noopener noreferrer" style="color:var(--color-sand); text-decoration:underline;">
+              https://kerta.desa.id
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigasi</h4>
+          <ul class="footer-links">
+            <li><a href="/">Beranda</a></li>
+            <li><a href="/katalog">Katalog Wisata</a></li>
+            <li><a href="/peta">Peta Interaktif</a></li>
+            <li><a href="/galeri">Galeri Foto</a></li>
+            <li><a href="/tentang">Tentang Program KKN</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kategori</h4>
+          <ul class="footer-links">
+            <li><a href="/katalog">Wisata Alam &amp; Jurang</a></li>
+            <li><a href="/katalog">Cagar Budaya Megalitikum</a></li>
+            <li><a href="/katalog">Wisata Religi &amp; Pura</a></li>
+            <li><a href="/katalog">Agrowisata Jeruk &amp; Kopi</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hak Cipta Foto</h4>
+          <p style="font-size:0.8125rem; line-height:1.55; color:#9FB0A5;">
+            Foto dokumentasi digunakan untuk tujuan edukasi dan promosi non-komersial desa. Seluruh hak cipta karya dokumentasi diserahkan kepada pihak Desa Kerta.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span class="current-year">2026</span> Tim KKN Desa Kerta, Payangan, Gianyar, Bali.
+        </div>
+        <div>
+          Dokumentasi Terbuka &amp; Faktual
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Data & Logic -->
+  <script src="/data/destinations.js"></script>
+  <script src="/assets/js/data-service.js"></script>
+  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/galeri.js"></script>
+</body>
+</html>

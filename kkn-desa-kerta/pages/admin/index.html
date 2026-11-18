@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Utama CMS — Jelajah Desa Kerta</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/css/admin.css" />
+</head>
+<body class="admin-body">
+
+  <!-- Sidebar Navigasi -->
+  <aside class="admin-sidebar">
+    <a href="/admin" class="sidebar-brand">
+      <img src="/assets/images/brand/logo.svg" alt="Logo Desa Kerta" class="sidebar-brand-img" />
+      <div class="sidebar-brand-text">
+        <h2>Desa Kerta</h2>
+        <span>ADMIN CMS</span>
+      </div>
+    </a>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-item">
+        <a href="/admin" class="active">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+          Dashboard
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="/admin/objek-wisata">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          Objek Wisata
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="/admin/galeri">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+          Galeri &amp; Foto
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="/admin/kategori">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="8" y1="6" x2="21" y2="6"></line>
+            <line x1="8" y1="12" x2="21" y2="12"></line>
+            <line x1="8" y1="18" x2="21" y2="18"></line>
+            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+          </svg>
+          Kategori Wisata
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="/admin/peta">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+            <line x1="8" y1="2" x2="8" y2="18"></line>
+            <line x1="16" y1="6" x2="16" y2="22"></line>
+          </svg>
+          Peta &amp; Koordinat
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="/admin/pengaturan">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+          Pengaturan
+        </a>
+      </li>
+      <li class="sidebar-item" style="margin-top:auto; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.08);">
+        <a href="/" target="_blank" rel="noopener noreferrer">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+          Lihat Website Publik &nearr;
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="user-avatar">AD</div>
+        <div class="user-details">
+          <div class="user-name">Administrator</div>
+          <div class="user-role">Pengelola Konten</div>
+        </div>
+      </div>
+      <button id="btn-admin-logout" title="Keluar dari CMS" style="color:#B2C4B9; background:none; border:none; cursor:pointer;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <polyline points="16 17 21 12 16 7"></polyline>
+          <line x1="21" y1="12" x2="9" y2="12"></line>
+        </svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Area Konten Utama -->
+  <div class="admin-main">
+    <header class="admin-topbar">
+      <div class="topbar-left">
+        <button class="sidebar-toggle-btn" aria-label="Toggle Sidebar">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <div class="admin-breadcrumbs">
+          <span>CMS</span>
+          <span>/</span>
+          <strong style="color:var(--admin-primary-dark);">Dashboard Utama</strong>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <a href="/admin/objek-wisata" class="btn-admin btn-admin-primary btn-admin-sm">
+          + Tambah Objek Wisata
+        </a>
+      </div>
+    </header>
+
+    <main class="admin-content">
+      <!-- Sambutan & Ringkasan -->
+      <div style="margin-bottom:2rem;">
+        <h1 style="font-size:1.6rem; font-weight:800; color:var(--admin-primary-dark);">Ringkasan Data Wisata Desa Kerta</h1>
+        <p style="font-size:0.875rem; color:var(--admin-text-muted);">
+          Data faktual terintegrasi secara langsung dengan basis data website publik.
+        </p>
+      </div>
+
+      <!-- Grid Statistik Riil (Diambil dari API /api/stats) -->
+      <div class="admin-stats-grid">
+        <div class="admin-stat-card">
+          <div class="stat-icon-wrap" style="background:#E8F5E9; color:#2E7D32;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+            </svg>
+          </div>
+          <div>
+            <div class="stat-value" id="dash-stat-total">0</div>
+            <div class="stat-label">Total Objek Wisata</div>
+          </div>
+        </div>
+
+        <div class="admin-stat-card">
+          <div class="stat-icon-wrap" style="background:#EBF3F8; color:#1A5276;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+          <div>
+            <div class="stat-value" id="dash-stat-published">0</div>
+            <div class="stat-label">Telah Dipublikasikan</div>
+          </div>
+        </div>
+
+        <div class="admin-stat-card">
+          <div class="stat-icon-wrap" style="background:#FFF8E1; color:#F57F17;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 20h9"></path>
+              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+            </svg>
+          </div>
+          <div>
+            <div class="stat-value" id="dash-stat-drafts">0</div>
+            <div class="stat-label">Draft / Menunggu Persetujuan</div>
+          </div>
+        </div>
+
+        <div class="admin-stat-card">
+          <div class="stat-icon-wrap" style="background:#E2EDE6; color:#1C382B;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <div>
+            <div class="stat-value" id="dash-stat-verified-coords">0</div>
+            <div class="stat-label">Koordinat GPS Terverifikasi</div>
+          </div>
+        </div>
+
+        <div class="admin-stat-card">
+          <div class="stat-icon-wrap" style="background:#F3E5F5; color:#7B1FA2;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+          </div>
+          <div>
+            <div class="stat-value" id="dash-stat-photos">0</div>
+            <div class="stat-label">Foto Terdokumentasi</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabel Daftar Objek Wisata Terbaru -->
+      <div class="admin-card">
+        <div class="admin-card-header">
+          <h2 class="admin-card-title">Objek Wisata Terdaftar</h2>
+          <a href="/admin/objek-wisata" class="btn-admin btn-admin-outline btn-admin-sm">
+            Buka Manajemen Lengkap &rarr;
+          </a>
+        </div>
+        <div class="admin-table-wrapper">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nama Objek Wisata</th>
+                <th>Kategori</th>
+                <th>Status Publikasi</th>
+                <th>Status Verifikasi</th>
+                <th>Koordinat GPS</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="dash-destinations-tbody">
+              <tr>
+                <td colspan="7" style="text-align:center; padding:2rem; color:var(--admin-text-muted);">
+                  Memuat data objek wisata...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="/assets/js/admin-api.js"></script>
+  <script src="/assets/js/admin-auth.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      // Muat statistik riil
+      const statsRes = await API.get('/api/stats');
+      if (statsRes && statsRes.ok && statsRes.stats) {
+        const s = statsRes.stats;
+        document.getElementById('dash-stat-total').textContent = s.total;
+        document.getElementById('dash-stat-published').textContent = s.published;
+        document.getElementById('dash-stat-drafts').textContent = s.drafts;
+        document.getElementById('dash-stat-verified-coords').textContent = s.verifiedCoords;
+        document.getElementById('dash-stat-photos').textContent = s.totalPhotos;
+      }
+
+      // Muat daftar destinasi
+      const destRes = await API.get('/api/destinations?all=true');
+      const tbody = document.getElementById('dash-destinations-tbody');
+
+      if (destRes && destRes.ok && Array.isArray(destRes.data)) {
+        if (destRes.data.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; padding:2rem; color:var(--admin-text-muted);">Belum ada objek wisata yang terdata.</td></tr>`;
+          return;
+        }
+
+        tbody.innerHTML = destRes.data.map(item => {
+          const hasCoords = item.coordinates && item.coordinates.verified === true;
+          const pubStatus = item.publicationStatus || 'published';
+          const pubClass = pubStatus === 'published' ? 'badge-pub-published' : (pubStatus === 'draft' ? 'badge-pub-draft' : 'badge-pub-archived');
+          const pubLabel = pubStatus === 'published' ? 'Dipublikasikan' : (pubStatus === 'draft' ? 'Draft' : 'Diarsipkan');
+
+          const verStatus = item.verificationStatus || 'pending_verification';
+          const verClass = verStatus === 'verified' ? 'badge-ver-verified' : (verStatus === 'partially_verified' ? 'badge-ver-partially_verified' : 'badge-ver-pending_verification');
+          const verLabel = verStatus === 'verified' ? 'Terverifikasi' : (verStatus === 'partially_verified' ? 'Tercatat Resmi' : 'Dalam Pendataan');
+
+          const coordsText = hasCoords 
+            ? `<span style="color:#2E7D32; font-weight:600;">${item.coordinates.latitude}, ${item.coordinates.longitude}</span>` 
+            : `<span style="color:#8D6E18; font-style:italic;">Menunggu GPS</span>`;
+
+          return `
+            <tr>
+              <td><code>${AdminUI.escapeHtml(item.id)}</code></td>
+              <td><strong>${AdminUI.escapeHtml(item.name)}</strong></td>
+              <td><span style="text-transform:capitalize;">${AdminUI.escapeHtml(item.category)}</span></td>
+              <td><span class="badge-pub ${pubClass}">${pubLabel}</span></td>
+              <td><span class="badge-ver ${verClass}">${verLabel}</span></td>
+              <td>${coordsText}</td>
+              <td>
+                <a href="/admin/objek-wisata?edit=${encodeURIComponent(item.id)}" class="btn-admin btn-admin-outline btn-admin-sm">Edit</a>
+              </td>
+            </tr>
+          `;
+        }).join('');
+      } else {
+        tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; padding:2rem; color:#C62828;">Gagal memuat data dari server.</td></tr>`;
+      }
+    });
+  </script>
+</body>
+</html>

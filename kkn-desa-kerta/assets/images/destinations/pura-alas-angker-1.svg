@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="puraSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E2ECE6"/>
+      <stop offset="100%" stop-color="#C7DAD0"/>
+    </linearGradient>
+    <linearGradient id="meruGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#212622"/>
+      <stop offset="100%" stop-color="#121613"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#puraSky)"/>
+  <!-- Hutan rimbun sakral di sekeliling pura -->
+  <path d="M0 250 Q 200 180 400 220 T 800 200 L 800 500 L 0 500 Z" fill="#2E4A37" opacity="0.5"/>
+  <path d="M0 290 Q 300 230 600 270 T 800 250 L 800 500 L 0 500 Z" fill="#1E3827" opacity="0.8"/>
+  <path d="M0 370 C 250 350 550 360 800 350 L 800 500 L 0 500 Z" fill="#284432"/>
+  <!-- Pohon-pohon tua (Alas/Hutan Lindung) -->
+  <rect x="120" y="240" width="22" height="150" fill="#2A1E14"/>
+  <circle cx="131" cy="210" r="70" fill="#1C3824"/>
+  <rect x="670" y="230" width="25" height="160" fill="#2A1E14"/>
+  <circle cx="682" cy="190" r="85" fill="#1C3824"/>
+  <!-- Candi Bentar (Gerbang Khas Bali) -->
+  <!-- Sayap Kiri -->
+  <path d="M330 380 L 330 200 L 345 200 L 350 220 L 360 220 L 365 250 L 375 250 L 375 380 Z" fill="#9C5237"/>
+  <path d="M330 200 L 340 170 L 345 200 Z" fill="#803E26"/>
+  <!-- Sayap Kanan -->
+  <path d="M470 380 L 470 200 L 455 200 L 450 220 L 440 220 L 435 250 L 425 250 L 425 380 Z" fill="#9C5237"/>
+  <path d="M470 200 L 460 170 L 455 200 Z" fill="#803E26"/>
+  <!-- Tangga Pura -->
+  <rect x="360" y="370" width="80" height="15" fill="#753C27"/>
+  <rect x="345" y="385" width="110" height="15" fill="#61311F"/>
+  <!-- Tumpang Meru di kejauhan tengah gerbang -->
+  <polygon points="390,260 410,260 415,275 385,275" fill="url(#meruGrad)"/>
+  <polygon points="385,280 415,280 422,298 378,298" fill="url(#meruGrad)"/>
+  <polygon points="380,303 420,303 428,323 372,323" fill="url(#meruGrad)"/>
+  <!-- Badge Label: Transparan & Faktual -->
+  <rect x="25" y="25" width="460" height="42" rx="8" fill="#1C382B" opacity="0.9"/>
+  <circle cx="45" cy="46" r="6" fill="#D4A359"/>
+  <text x="60" y="51" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Pura Alas Angker (Situs Spiritual &amp; Sejarah)</text>
+  <rect x="25" y="445" width="460" height="32" rx="6" fill="#000000" opacity="0.65"/>
+  <text x="35" y="466" font-family="system-ui, sans-serif" font-size="12" fill="#FFFFFF">Prakiraan Ilustrasi • Foto Asli Menunggu Dokumentasi Lapangan KKN</text>
+</svg>

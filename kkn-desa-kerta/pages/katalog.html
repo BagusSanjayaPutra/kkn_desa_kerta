@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Katalog Wisata — Jelajah Desa Kerta, Payangan, Gianyar</title>
+  <meta name="description" content="Direktori lengkap destinasi wisata alam, cagar budaya Megalitikum, situs religi, dan agrowisata Desa Kerta, Payangan, Gianyar." />
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- App Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/components.css" />
+</head>
+<body>
+
+  <!-- Banner Transparansi & Integritas Data KKN -->
+  <aside class="kkn-disclaimer-banner" role="complementary">
+    <span>📌 <strong>Katalog Data Faktual KKN</strong> — Seluruh entri dilengkapi status verifikasi dan sumber data terbuka.</span>
+  </aside>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Navigasi Utama">
+        <a href="/" class="brand-link" aria-label="Beranda Jelajah Desa Kerta">
+          <img src="/assets/images/brand/logo.svg" alt="Logo Jelajah Desa Kerta" class="brand-logo-img" />
+        </a>
+
+        <button class="nav-toggle" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="main-nav-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-menu" id="main-nav-menu">
+          <li><a href="/" class="nav-link">Beranda</a></li>
+          <li><a href="/katalog" class="nav-link active">Katalog Wisata</a></li>
+          <li><a href="/peta" class="nav-link">Peta Interaktif</a></li>
+          <li><a href="/galeri" class="nav-link">Galeri</a></li>
+          <li><a href="/tentang" class="nav-link">Tentang KKN</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="section">
+    <div class="container">
+      
+      <!-- Header Halaman Katalog -->
+      <div class="section-header">
+        <span class="section-eyebrow">Direktori Lengkap</span>
+        <h1 class="section-title">Katalog Potensi Wisata Desa Kerta</h1>
+        <p class="section-desc">
+          Temukan ragam potensi daya tarik alam, sejarah megalitikum, kawasan suci spiritual, dan agrowisata perkebunan jeruk di Desa Kerta. Gunakan fitur pencarian dan filter untuk menyaring data berdasarkan kategori dan status verifikasi.
+        </p>
+      </div>
+
+      <!-- Filter & Search Toolbar -->
+      <div class="filter-toolbar">
+        <div class="search-input-box">
+          <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input 
+            type="text" 
+            id="catalog-search-input" 
+            placeholder="Ketik nama destinasi, banjar, atau kata kunci (contoh: Munduk, Sarkofagus, Jeruk)..." 
+            aria-label="Cari destinasi wisata"
+          />
+        </div>
+
+        <!-- Filter Baris 1: Kategori Potensi -->
+        <div class="filter-pills-row">
+          <span class="filter-pills-label">Kategori:</span>
+          <button class="filter-pill active" data-filter-category="all">Semua Kategori</button>
+          <button class="filter-pill" data-filter-category="alam">Wisata Alam</button>
+          <button class="filter-pill" data-filter-category="budaya">Cagar Budaya</button>
+          <button class="filter-pill" data-filter-category="religi">Wisata Religi</button>
+          <button class="filter-pill" data-filter-category="agro">Agrowisata</button>
+        </div>
+
+        <!-- Filter Baris 2: Status Verifikasi Data -->
+        <div class="filter-pills-row" style="border-top:1px solid var(--color-border-light); padding-top:0.75rem;">
+          <span class="filter-pills-label">Status Verifikasi:</span>
+          <button class="filter-pill active" data-filter-status="all">Semua Status</button>
+          <button class="filter-pill" data-filter-status="partially_verified">Tercatat Resmi</button>
+          <button class="filter-pill" data-filter-status="pending_verification">Dalam Pendataan Lapangan</button>
+        </div>
+
+        <!-- Counter Hasil -->
+        <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.8125rem; color:var(--color-text-subtle); padding-top:0.5rem;">
+          <span id="catalog-result-count">Memuat destinasi...</span>
+          <span style="font-style:italic;">Data diperbarui secara faktual</span>
+        </div>
+      </div>
+
+      <!-- Grid Kartu Destinasi -->
+      <div class="cards-grid" id="catalog-cards-grid">
+        <!-- Dirender secara dinamis oleh assets/js/katalog.js -->
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Jelajah Desa Kerta</h3>
+          <p class="footer-desc">
+            Portal pendataan dan informasi pariwisata Desa Kerta, Payangan, Gianyar, Bali berbasis penelitian lapangan mahasiswa KKN dan partisipasi masyarakat desa.
+          </p>
+          <div style="font-size:0.8125rem;">
+            Website Resmi Desa: <br />
+            <a href="https://kerta.desa.id" target="_blank" rel="noopener noreferrer" style="color:var(--color-sand); text-decoration:underline;">
+              https://kerta.desa.id
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Halaman</h4>
+          <ul class="footer-links">
+            <li><a href="/">Beranda</a></li>
+            <li><a href="/katalog">Katalog Wisata</a></li>
+            <li><a href="/peta">Peta Interaktif</a></li>
+            <li><a href="/galeri">Galeri Foto</a></li>
+            <li><a href="/tentang">Tentang Program KKN</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kategori</h4>
+          <ul class="footer-links">
+            <li><a href="/katalog">Wisata Alam &amp; Jurang</a></li>
+            <li><a href="/katalog">Cagar Budaya Megalitikum</a></li>
+            <li><a href="/katalog">Wisata Religi &amp; Pura</a></li>
+            <li><a href="/katalog">Agrowisata Jeruk &amp; Kopi</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Pemberitahuan Data</h4>
+          <p style="font-size:0.8125rem; line-height:1.55; color:#9FB0A5;">
+            Apabila terdapat ketidaksesuaian data operasional atau tiket, hubungi tim KKN atau pihak desa untuk pembaruan inventaris.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span class="current-year">2026</span> Tim KKN Desa Kerta, Payangan, Gianyar, Bali.
+        </div>
+        <div>
+          Katalog Wisata Terbuka &amp; Faktual
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script Data & Logic -->
+  <script src="/data/destinations.js"></script>
+  <script src="/assets/js/data-service.js"></script>
+  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/katalog.js"></script>
+</body>
+</html>

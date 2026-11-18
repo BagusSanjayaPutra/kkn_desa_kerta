@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pengelolaan Objek Wisata — Admin CMS Desa Kerta</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/css/admin.css" />
+</head>
+<body class="admin-body">
+
+  <!-- Sidebar Navigasi -->
+  <aside class="admin-sidebar">
+    <a href="/admin" class="sidebar-brand">
+      <img src="/assets/images/brand/logo.svg" alt="Logo Desa Kerta" class="sidebar-brand-img" />
+      <div class="sidebar-brand-text">
+        <h2>Desa Kerta</h2>
+        <span>ADMIN CMS</span>
+      </div>
+    </a>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-item">
+        <a href="/admin">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+          Dashboard
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="/admin/objek-wisata" class="active">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          Objek Wisata
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="/admin/galeri">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+          Galeri &amp; Foto
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="/admin/kategori">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="8" y1="6" x2="21" y2="6"></line>
+            <line x1="8" y1="12" x2="21" y2="12"></line>
+            <line x1="8" y1="18" x2="21" y2="18"></line>
+            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+          </svg>
+          Kategori Wisata
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="/admin/peta">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+            <line x1="8" y1="2" x2="8" y2="18"></line>
+            <line x1="16" y1="6" x2="16" y2="22"></line>
+          </svg>
+          Peta &amp; Koordinat
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="/admin/pengaturan">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+          Pengaturan
+        </a>
+      </li>
+      <li class="sidebar-item" style="margin-top:auto; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.08);">
+        <a href="/" target="_blank" rel="noopener noreferrer">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+          Lihat Website Publik &nearr;
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="user-avatar">AD</div>
+        <div class="user-details">
+          <div class="user-name">Administrator</div>
+          <div class="user-role">Pengelola Konten</div>
+        </div>
+      </div>
+      <button id="btn-admin-logout" title="Keluar dari CMS" style="color:#B2C4B9; background:none; border:none; cursor:pointer;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <polyline points="16 17 21 12 16 7"></polyline>
+          <line x1="21" y1="12" x2="9" y2="12"></line>
+        </svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Area Konten Utama -->
+  <div class="admin-main">
+    <header class="admin-topbar">
+      <div class="topbar-left">
+        <button class="sidebar-toggle-btn" aria-label="Toggle Sidebar">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <div class="admin-breadcrumbs">
+          <a href="/admin">CMS</a>
+          <span>/</span>
+          <strong style="color:var(--admin-primary-dark);">Kelola Objek Wisata</strong>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <button id="btn-open-create-modal" class="btn-admin btn-admin-primary btn-admin-sm">
+          + Tambah Objek Wisata
+        </button>
+      </div>
+    </header>
+
+    <main class="admin-content">
+      <div style="margin-bottom:1.5rem; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1rem;">
+        <div>
+          <h1 style="font-size:1.5rem; font-weight:800; color:var(--admin-primary-dark);">Daftar Objek Wisata</h1>
+          <p style="font-size:0.875rem; color:var(--admin-text-muted);">
+            Kelola data faktual, publikasi, fasilitas, dan status verifikasi lapangan objek wisata.
+          </p>
+        </div>
+      </div>
+
+      <!-- Filter & Pencarian Toolbar -->
+      <div class="admin-card" style="padding:1rem 1.25rem; margin-bottom:1.5rem;">
+        <div style="display:grid; grid-template-columns:2fr 1fr 1fr; gap:1rem;">
+          <input 
+            type="text" 
+            id="filter-search" 
+            class="form-control" 
+            placeholder="Cari nama objek, alamat, atau ID..."
+          />
+          <select id="filter-category" class="form-control">
+            <option value="all">Semua Kategori</option>
+          </select>
+          <select id="filter-status" class="form-control">
+            <option value="all">Semua Status Publikasi</option>
+            <option value="published">Dipublikasikan</option>
+            <option value="draft">Draft</option>
+            <option value="archived">Diarsipkan</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Tabel Data Objek Wisata -->
+      <div class="admin-card">
+        <div class="admin-table-wrapper">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Foto</th>
+                <th>Kode</th>
+                <th>Nama Objek Wisata</th>
+                <th>Kategori</th>
+                <th>Publikasi</th>
+                <th>Verifikasi Data</th>
+                <th>Titik GPS</th>
+                <th style="text-align:right;">Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="destinations-table-body">
+              <tr>
+                <td colspan="8" style="text-align:center; padding:2rem; color:var(--admin-text-muted);">
+                  Memuat data objek wisata...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- MODAL: FORM TAMBAH / EDIT OBJEK WISATA -->
+  <div class="admin-modal-overlay" id="destination-modal">
+    <div class="admin-modal" style="max-width:840px;">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title" id="modal-form-title">Tambah Objek Wisata Baru</h3>
+        <button type="button" class="btn-close-modal" id="btn-close-modal" style="background:none; border:none; font-size:1.5rem; cursor:pointer; color:var(--admin-text-muted);">&times;</button>
+      </div>
+
+      <form id="destination-form">
+        <div class="admin-modal-body">
+          <input type="hidden" id="form-dest-id" />
+
+          <!-- Baris 1: Nama, Kategori, Publikasi -->
+          <div class="form-row">
+            <div class="form-group" style="grid-column: span 2;">
+              <label for="form-dest-name" class="form-label">Nama Objek Wisata <span style="color:#C62828;">*</span></label>
+              <input type="text" id="form-dest-name" class="form-control" required placeholder="Contoh: Objek Wisata Alam Munduk Asri" />
+            </div>
+            <div class="form-group">
+              <label for="form-dest-category" class="form-label">Kategori <span style="color:#C62828;">*</span></label>
+              <select id="form-dest-category" class="form-control" required></select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="form-dest-pub-status" class="form-label">Status Publikasi Website</label>
+              <select id="form-dest-pub-status" class="form-control">
+                <option value="published">Dipublikasikan (Tayang di Publik)</option>
+                <option value="draft">Draft (Hanya Tampak di Admin)</option>
+                <option value="archived">Diarsipkan (Disembunyikan)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="form-dest-ver-status" class="form-label">Status Verifikasi Data</label>
+              <select id="form-dest-ver-status" class="form-control">
+                <option value="pending_verification">Dalam Pendataan Lapangan KKN</option>
+                <option value="partially_verified">Tercatat Resmi • Menunggu Survei GPS</option>
+                <option value="verified">Terverifikasi Resmi &amp; GPS Valid</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="form-dest-slug" class="form-label">URL Slug (Opsional)</label>
+              <input type="text" id="form-dest-slug" class="form-control" placeholder="Otomatis dari nama jika kosong" />
+            </div>
+          </div>
+
+          <!-- Deskripsi Singkat & Penuh -->
+          <div class="form-group">
+            <label for="form-dest-short-desc" class="form-label">Deskripsi Singkat (Kartu Katalog)</label>
+            <textarea id="form-dest-short-desc" class="form-control" rows="2" placeholder="Ringkasan faktual untuk kartu depan..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="form-dest-desc" class="form-label">Deskripsi Lengkap (Halaman Detail)</label>
+            <textarea id="form-dest-desc" class="form-control" rows="4" placeholder="Uraian komprehensif mengenai potensi wisata..."></textarea>
+          </div>
+
+          <!-- Alamat & Akses -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="form-dest-address" class="form-label">Alamat / Dusun / Banjar</label>
+              <input type="text" id="form-dest-address" class="form-control" placeholder="Contoh: Banjar Margatengah, Desa Kerta..." />
+            </div>
+            <div class="form-group">
+              <label for="form-dest-access" class="form-label">Catatan Aksesibilitas &amp; Jalan</label>
+              <input type="text" id="form-dest-access" class="form-control" placeholder="Akses kendaraan roda 2 / roda 4..." />
+            </div>
+          </div>
+
+          <!-- Bagian Foto Utama Objek Wisata -->
+          <div style="background:#F4F7F5; border:1px solid var(--admin-border); border-radius:8px; padding:1.25rem; margin-bottom:1.25rem;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
+              <div style="font-size:0.875rem; font-weight:700; color:var(--admin-primary-dark);">
+                📷 Foto Utama Objek Wisata
+              </div>
+              <a href="/admin/galeri" target="_blank" style="font-size:0.75rem; color:var(--admin-primary); font-weight:600; text-decoration:none;">
+                Kelola Seluruh Galeri &rarr;
+              </a>
+            </div>
+
+            <!-- Pratinjau Foto -->
+            <div id="dest-photo-preview-wrap" style="display:none; margin-bottom:1rem; text-align:center;">
+              <div style="max-width:320px; margin:0 auto; border-radius:6px; overflow:hidden; border:1px solid var(--admin-border); background:#fff;">
+                <img id="dest-photo-preview-img" src="" alt="Pratinjau Foto" style="width:100%; height:160px; object-fit:cover; display:block;" onerror="this.src='/assets/images/destinations/munduk-asri-1.svg'" />
+              </div>
+              <div id="dest-photo-current-info" style="font-size:0.75rem; color:var(--admin-text-muted); margin-top:6px;"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="form-dest-photo-file" class="form-label">Pilih Berkas Foto (JPG, PNG, WebP — Maksimal 5MB)</label>
+              <input type="file" id="form-dest-photo-file" class="form-control" accept="image/jpeg,image/png,image/webp,image/svg+xml" />
+              <div class="form-help">Pilih foto dari komputer atau ponsel untuk dijadikan sampul utama kartu wisata.</div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="form-dest-photo-caption" class="form-label">Keterangan / Caption Foto</label>
+                <input type="text" id="form-dest-photo-caption" class="form-control" placeholder="Contoh: Formasi tebing akar pohon Taep" />
+              </div>
+              <div class="form-group">
+                <label for="form-dest-photo-source" class="form-label">Sumber Foto / Atribusi</label>
+                <input type="text" id="form-dest-photo-source" class="form-control" placeholder="Dokumentasi Lapangan Tim KKN Desa Kerta" value="Dokumentasi Lapangan Tim KKN Desa Kerta" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Koordinat Spasial GPS -->
+          <div style="background:#F8FAF9; border:1px solid var(--admin-border); border-radius:8px; padding:1.25rem; margin-bottom:1.25rem;">
+            <div style="font-size:0.875rem; font-weight:700; color:var(--admin-primary-dark); margin-bottom:0.75rem;">
+              📍 Titik Koordinat Geografis WGS84
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="form-dest-lat" class="form-label">Latitude (-90 s/d 90)</label>
+                <input type="number" step="any" id="form-dest-lat" class="form-control" placeholder="Contoh: -8.351234" />
+              </div>
+              <div class="form-group">
+                <label for="form-dest-lng" class="form-label">Longitude (-180 s/d 180)</label>
+                <input type="number" step="any" id="form-dest-lng" class="form-control" placeholder="Contoh: 115.278910" />
+              </div>
+              <div class="form-group" style="display:flex; align-items:center; gap:0.5rem; margin-top:1.5rem;">
+                <input type="checkbox" id="form-dest-coords-verified" style="width:18px; height:18px;" />
+                <label for="form-dest-coords-verified" style="font-size:0.8125rem; font-weight:600; cursor:pointer;">
+                  Koordinat Terverifikasi Lapangan
+                </label>
+              </div>
+            </div>
+            <div class="form-group" style="margin-bottom:0;">
+              <label for="form-dest-coords-source" class="form-label">Sumber Pengukuran Koordinat</label>
+              <input type="text" id="form-dest-coords-source" class="form-control" placeholder="Contoh: Pengukuran GPS Lapangan Tim KKN (15 Okt 2026)" />
+            </div>
+          </div>
+
+          <!-- Fasilitas & Operasional -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="form-dest-hours" class="form-label">Jam Operasional</label>
+              <input type="text" id="form-dest-hours" class="form-control" placeholder="Contoh: 08.00 - 18.00 WITA atau 'Belum dikonfirmasi'" />
+            </div>
+            <div class="form-group">
+              <label for="form-dest-fee" class="form-label">Tiket Masuk / Biaya</label>
+              <input type="text" id="form-dest-fee" class="form-control" placeholder="Contoh: Rp10.000 / orang atau 'Belum dikonfirmasi'" />
+            </div>
+            <div class="form-group">
+              <label for="form-dest-contact" class="form-label">Kontak Pengelola</label>
+              <input type="text" id="form-dest-contact" class="form-control" placeholder="Nomor telepon / kontak yang sah" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="form-dest-facilities" class="form-label">Fasilitas (Pisahkan dengan koma)</label>
+            <input type="text" id="form-dest-facilities" class="form-control" placeholder="Area parkir, Toilet, Gazebo, Warung makan..." />
+          </div>
+
+          <div class="form-group">
+            <label for="form-dest-sources" class="form-label">Sumber Informasi Faktual (Pisahkan dengan koma)</label>
+            <input type="text" id="form-dest-sources" class="form-control" placeholder="Website Desa (kerta.desa.id), Balai Cagar Budaya, Wawancara Pengelola..." />
+          </div>
+
+          <div class="form-group">
+            <label for="form-dest-ver-notes" class="form-label">Catatan Verifikasi Tim KKN</label>
+            <textarea id="form-dest-ver-notes" class="form-control" rows="2" placeholder="Catatan internal verifikasi data..."></textarea>
+          </div>
+        </div>
+
+        <div class="admin-modal-footer">
+          <button type="button" class="btn-admin btn-admin-outline" id="btn-cancel-modal">Batal</button>
+          <button type="submit" class="btn-admin btn-admin-primary" id="btn-save-destination">Simpan Objek Wisata</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/assets/js/admin-api.js"></script>
+  <script src="/assets/js/admin-auth.js"></script>
+  <script>
+    let allDestinations = [];
+    let allCategories = [];
+
+    // Helper elemen modal & foto
+    let modal, openModal, closeModal;
+    let photoFileInput, previewWrap, previewImg, photoInfo;
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      await loadCategories();
+      await loadDestinations();
+      initEvents();
+
+      // Deteksi query param ?edit=ID pada URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const editId = urlParams.get('edit');
+      if (editId) {
+        const item = allDestinations.find(d => d.id === editId);
+        if (item) {
+          populateForm(item);
+          openModal(true);
+        }
+      }
+    });
+
+    async function loadCategories() {
+      const res = await API.get('/api/categories');
+      if (res && res.ok && Array.isArray(res.data)) {
+        allCategories = res.data;
+        const selectFilter = document.getElementById('filter-category');
+        const selectForm = document.getElementById('form-dest-category');
+
+        selectFilter.innerHTML = '<option value="all">Semua Kategori</option>' + 
+          allCategories.map(c => `<option value="${c.slug}">${c.name}</option>`).join('');
+
+        selectForm.innerHTML = allCategories.map(c => `<option value="${c.slug}">${c.name}</option>`).join('');
+      }
+    }
+
+    async function loadDestinations() {
+      const res = await API.get('/api/destinations?all=true');
+      if (res && res.ok && Array.isArray(res.data)) {
+        allDestinations = res.data;
+        renderTable();
+      }
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById('destinations-table-body');
+      const searchQuery = document.getElementById('filter-search').value.toLowerCase().trim();
+      const catFilter = document.getElementById('filter-category').value;
+      const statusFilter = document.getElementById('filter-status').value;
+
+      const filtered = allDestinations.filter(d => {
+        if (catFilter !== 'all' && d.category !== catFilter) return false;
+        if (statusFilter !== 'all' && (d.publicationStatus || 'published') !== statusFilter) return false;
+        if (searchQuery) {
+          const matchName = d.name.toLowerCase().includes(searchQuery);
+          const matchId = d.id.toLowerCase().includes(searchQuery);
+          const matchAddr = (d.address || '').toLowerCase().includes(searchQuery);
+          if (!matchName && !matchId && !matchAddr) return false;
+        }
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="8" style="text-align:center; padding:2.5rem; color:var(--admin-text-muted);">Tidak ada objek wisata yang cocok dengan filter pencarian.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = filtered.map(item => {
+        const hasCoords = item.coordinates && item.coordinates.verified === true;
+        const pubStatus = item.publicationStatus || 'published';
+        const pubClass = pubStatus === 'published' ? 'badge-pub-published' : (pubStatus === 'draft' ? 'badge-pub-draft' : 'badge-pub-archived');
+        const pubLabel = pubStatus === 'published' ? 'Dipublikasikan' : (pubStatus === 'draft' ? 'Draft' : 'Diarsipkan');
+
+        const verStatus = item.verificationStatus || 'pending_verification';
+        const verClass = verStatus === 'verified' ? 'badge-ver-verified' : (verStatus === 'partially_verified' ? 'badge-ver-partially_verified' : 'badge-ver-pending_verification');
+        const verLabel = verStatus === 'verified' ? 'Terverifikasi' : (verStatus === 'partially_verified' ? 'Tercatat Resmi' : 'Dalam Pendataan');
+
+        const isFileProto = typeof window !== 'undefined' && window.location.protocol === 'file:';
+        const rawPhoto = (item.photos && item.photos[0] && item.photos[0].url) || 'assets/images/destinations/munduk-asri-1.svg';
+        let displayPhoto = rawPhoto;
+        let fallbackSrc = '/assets/images/destinations/munduk-asri-1.svg';
+        if (!rawPhoto.startsWith('http')) {
+          const cleanPath = rawPhoto.replace(/^(\.\.\/|\.\/|\/)/, '');
+          displayPhoto = isFileProto ? '../../' + cleanPath : '/' + cleanPath;
+          fallbackSrc = isFileProto ? '../../assets/images/destinations/munduk-asri-1.svg' : '/assets/images/destinations/munduk-asri-1.svg';
+        }
+
+        const coordsText = hasCoords 
+          ? `<span style="color:#2E7D32; font-weight:600; font-size:0.775rem;">${item.coordinates.latitude}, ${item.coordinates.longitude}</span>` 
+          : `<span style="color:#8D6E18; font-style:italic; font-size:0.775rem;">Menunggu GPS</span>`;
+
+        return `
+          <tr>
+            <td>
+              <img src="${displayPhoto}" alt="${AdminUI.escapeHtml(item.name)}" style="width:48px; height:36px; object-fit:cover; border-radius:4px; border:1px solid var(--admin-border);" onerror="this.src='${fallbackSrc}'" />
+            </td>
+            <td><code>${AdminUI.escapeHtml(item.id)}</code></td>
+            <td>
+              <strong>${AdminUI.escapeHtml(item.name)}</strong>
+              <div style="font-size:0.75rem; color:var(--admin-text-subtle);">/${AdminUI.escapeHtml(item.slug)}</div>
+            </td>
+            <td><span style="text-transform:capitalize;">${AdminUI.escapeHtml(item.category)}</span></td>
+            <td><span class="badge-pub ${pubClass}">${pubLabel}</span></td>
+            <td><span class="badge-ver ${verClass}">${verLabel}</span></td>
+            <td>${coordsText}</td>
+            <td style="text-align:right; white-space:nowrap;">
+              <button class="btn-admin btn-admin-outline btn-admin-sm btn-edit-dest" data-id="${item.id}">Edit</button>
+              <button class="btn-admin btn-admin-danger btn-admin-sm btn-delete-dest" data-id="${item.id}" data-name="${AdminUI.escapeHtml(item.name)}">Hapus</button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function initEvents() {
+      // Filter listeners
+      document.getElementById('filter-search').addEventListener('input', renderTable);
+      document.getElementById('filter-category').addEventListener('change', renderTable);
+      document.getElementById('filter-status').addEventListener('change', renderTable);
+
+      // Modal open / close
+      modal = document.getElementById('destination-modal');
+      const openCreateBtn = document.getElementById('btn-open-create-modal');
+      const closeBtn = document.getElementById('btn-close-modal');
+      const cancelBtn = document.getElementById('btn-cancel-modal');
+
+      photoFileInput = document.getElementById('form-dest-photo-file');
+      previewWrap = document.getElementById('dest-photo-preview-wrap');
+      previewImg = document.getElementById('dest-photo-preview-img');
+      photoInfo = document.getElementById('dest-photo-current-info');
+
+      openModal = (isEdit = false) => {
+        document.getElementById('modal-form-title').textContent = isEdit ? 'Edit Objek Wisata' : 'Tambah Objek Wisata Baru';
+        modal.classList.add('active');
+      };
+
+      closeModal = () => {
+        modal.classList.remove('active');
+        document.getElementById('destination-form').reset();
+        document.getElementById('form-dest-id').value = '';
+        if (previewWrap) previewWrap.style.display = 'none';
+        if (previewImg) previewImg.src = '';
+        if (photoInfo) photoInfo.textContent = '';
+        if (photoFileInput) photoFileInput.value = '';
+        document.getElementById('form-dest-photo-caption').value = '';
+        document.getElementById('form-dest-photo-source').value = 'Dokumentasi Lapangan Tim KKN Desa Kerta';
+      };
+
+      openCreateBtn.addEventListener('click', () => {
+        document.getElementById('destination-form').reset();
+        document.getElementById('form-dest-id').value = '';
+        if (previewWrap) previewWrap.style.display = 'none';
+        if (previewImg) previewImg.src = '';
+        if (photoInfo) photoInfo.textContent = '';
+        if (photoFileInput) photoFileInput.value = '';
+        openModal(false);
+      });
+
+      closeBtn.addEventListener('click', closeModal);
+      cancelBtn.addEventListener('click', closeModal);
+
+      // Pratinjau saat memilih file foto baru
+      if (photoFileInput) {
+        photoFileInput.addEventListener('change', () => {
+          const file = photoFileInput.files[0];
+          if (file) {
+            if (file.size > 5 * 1024 * 1024) {
+              AdminUI.toast('Ukuran file foto maksimal 5 MB!', 'error');
+              photoFileInput.value = '';
+              return;
+            }
+            const reader = new FileReader();
+            reader.onload = ev => {
+              previewImg.src = ev.target.result;
+              previewWrap.style.display = 'block';
+              photoInfo.textContent = `File baru dipilih: ${file.name} (${(file.size / 1024).toFixed(0)} KB)`;
+            };
+            reader.readAsDataURL(file);
+          }
+        });
+      }
+
+      // Delegasi tombol Edit & Hapus
+      document.getElementById('destinations-table-body').addEventListener('click', async (e) => {
+        const editBtn = e.target.closest('.btn-edit-dest');
+        const deleteBtn = e.target.closest('.btn-delete-dest');
+
+        if (editBtn) {
+          const id = editBtn.getAttribute('data-id');
+          const item = allDestinations.find(d => d.id === id);
+          if (item) {
+            populateForm(item);
+            openModal(true);
+          }
+        }
+
+        if (deleteBtn) {
+          const id = deleteBtn.getAttribute('data-id');
+          const name = deleteBtn.getAttribute('data-name');
+          if (confirm(`YAKIN HAPUS?\nApakah Anda yakin ingin menghapus objek wisata "${name}" (${id}) secara permanen? Data tidak dapat dipulihkan.`)) {
+            const res = await API.delete(`/api/destinations/${encodeURIComponent(id)}`);
+            if (res && res.ok) {
+              AdminUI.toast(`Objek wisata "${name}" berhasil dihapus.`, 'success');
+              await loadDestinations();
+            } else {
+              AdminUI.toast(res.error || 'Gagal menghapus objek wisata.', 'error');
+            }
+          }
+        }
+      });
+
+      // Submit form
+      document.getElementById('destination-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const destId = document.getElementById('form-dest-id').value;
+        const submitBtn = document.getElementById('btn-save-destination');
+        const originalText = submitBtn.textContent;
+
+        const latVal = document.getElementById('form-dest-lat').value;
+        const lngVal = document.getElementById('form-dest-lng').value;
+        const coordsVerified = document.getElementById('form-dest-coords-verified').checked;
+
+        const payload = {
+          name: document.getElementById('form-dest-name').value.trim(),
+          category: document.getElementById('form-dest-category').value,
+          slug: document.getElementById('form-dest-slug').value.trim() || undefined,
+          publicationStatus: document.getElementById('form-dest-pub-status').value,
+          verificationStatus: document.getElementById('form-dest-ver-status').value,
+          shortDescription: document.getElementById('form-dest-short-desc').value.trim(),
+          description: document.getElementById('form-dest-desc').value.trim(),
+          address: document.getElementById('form-dest-address').value.trim() || null,
+          accessNotes: document.getElementById('form-dest-access').value.trim() || null,
+          openingHours: document.getElementById('form-dest-hours').value.trim() || null,
+          entranceFee: document.getElementById('form-dest-fee').value.trim() || null,
+          contact: document.getElementById('form-dest-contact').value.trim() || null,
+          facilities: document.getElementById('form-dest-facilities').value.split(',').map(s => s.trim()).filter(Boolean),
+          sources: document.getElementById('form-dest-sources').value.split(',').map(s => s.trim()).filter(Boolean),
+          verificationNotes: document.getElementById('form-dest-ver-notes').value.trim() || null,
+          coordinates: {
+            latitude: latVal !== '' ? Number(latVal) : null,
+            longitude: lngVal !== '' ? Number(lngVal) : null,
+            verified: coordsVerified,
+            source: document.getElementById('form-dest-coords-source').value.trim() || 'Survei GPS Lapangan Tim KKN'
+          }
+        };
+
+        submitBtn.disabled = true;
+
+        try {
+          // Tangani unggah foto jika ada file baru yang dipilih
+          const photoFile = photoFileInput && photoFileInput.files[0];
+          let newPhotoObj = null;
+
+          if (photoFile) {
+            submitBtn.textContent = 'Mengunggah foto...';
+            const uploadRes = await API.uploadPhoto(photoFile);
+            if (!uploadRes || !uploadRes.ok || !uploadRes.url) {
+              throw new Error(uploadRes.error || 'Gagal mengunggah file foto.');
+            }
+            const cap = document.getElementById('form-dest-photo-caption').value.trim() || payload.name;
+            const src = document.getElementById('form-dest-photo-source').value.trim() || 'Dokumentasi Lapangan Tim KKN Desa Kerta';
+            newPhotoObj = {
+              url: uploadRes.url,
+              caption: cap,
+              source: src
+            };
+          }
+
+          // Sinkronisasi galeri foto existing
+          let existingPhotos = [];
+          if (destId) {
+            const existing = allDestinations.find(d => d.id === destId);
+            if (existing && Array.isArray(existing.photos)) {
+              existingPhotos = [...existing.photos];
+            }
+          }
+
+          if (newPhotoObj) {
+            if (existingPhotos.length > 0) {
+              existingPhotos[0] = newPhotoObj; // Ganti foto utama paling depan
+            } else {
+              existingPhotos = [newPhotoObj];
+            }
+            payload.photos = existingPhotos;
+          } else if (destId && existingPhotos.length > 0) {
+            // Perbarui caption / sumber foto utama jika diedit
+            const cap = document.getElementById('form-dest-photo-caption').value.trim();
+            const src = document.getElementById('form-dest-photo-source').value.trim();
+            if (cap) existingPhotos[0].caption = cap;
+            if (src) existingPhotos[0].source = src;
+            payload.photos = existingPhotos;
+          }
+
+          submitBtn.textContent = 'Menyimpan data...';
+          let res;
+          if (destId) {
+            res = await API.put(`/api/destinations/${encodeURIComponent(destId)}`, payload);
+          } else {
+            res = await API.post('/api/destinations', payload);
+          }
+
+          if (res && res.ok) {
+            AdminUI.toast(destId ? 'Perubahan berhasil disimpan.' : 'Objek wisata baru berhasil ditambahkan.', 'success');
+            closeModal();
+            await loadDestinations();
+          } else {
+            AdminUI.toast(res.error || 'Gagal menyimpan objek wisata.', 'error');
+          }
+        } catch (err) {
+          AdminUI.toast(err.message, 'error');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }
+      });
+    }
+
+    function populateForm(item) {
+      document.getElementById('form-dest-id').value = item.id;
+      document.getElementById('form-dest-name').value = item.name || '';
+      document.getElementById('form-dest-category').value = item.category || (allCategories[0] && allCategories[0].slug);
+      document.getElementById('form-dest-slug').value = item.slug || '';
+      document.getElementById('form-dest-pub-status').value = item.publicationStatus || 'published';
+      document.getElementById('form-dest-ver-status').value = item.verificationStatus || 'pending_verification';
+      document.getElementById('form-dest-short-desc').value = item.shortDescription || '';
+      document.getElementById('form-dest-desc').value = item.description || '';
+      document.getElementById('form-dest-address').value = item.address || '';
+      document.getElementById('form-dest-access').value = item.accessNotes || '';
+      document.getElementById('form-dest-hours').value = item.openingHours || '';
+      document.getElementById('form-dest-fee').value = item.entranceFee || '';
+      document.getElementById('form-dest-contact').value = item.contact || '';
+      document.getElementById('form-dest-facilities').value = (item.facilities || []).join(', ');
+      document.getElementById('form-dest-sources').value = (item.sources || []).join(', ');
+      document.getElementById('form-dest-ver-notes').value = item.verificationNotes || '';
+
+      // Tampilkan foto utama saat ini jika ada
+      const currentPhoto = (item.photos && item.photos[0]) || null;
+      if (currentPhoto && currentPhoto.url) {
+        const isFileProto = typeof window !== 'undefined' && window.location.protocol === 'file:';
+        const cleanP = currentPhoto.url.replace(/^(\.\.\/|\.\/|\/)/, '');
+        const pUrl = currentPhoto.url.startsWith('http') ? currentPhoto.url : (isFileProto ? `../../${cleanP}` : `/${cleanP}`);
+        if (previewImg) previewImg.src = pUrl;
+        if (photoInfo) photoInfo.textContent = `Foto Utama: ${currentPhoto.caption || 'Tanpa keterangan'} (${currentPhoto.source || 'KKN'})`;
+        document.getElementById('form-dest-photo-caption').value = currentPhoto.caption || '';
+        document.getElementById('form-dest-photo-source').value = currentPhoto.source || 'Dokumentasi Lapangan Tim KKN Desa Kerta';
+      } else {
+        if (previewWrap) previewWrap.style.display = 'none';
+        if (previewImg) previewImg.src = '';
+        if (photoInfo) photoInfo.textContent = '';
+        document.getElementById('form-dest-photo-caption').value = '';
+        document.getElementById('form-dest-photo-source').value = 'Dokumentasi Lapangan Tim KKN Desa Kerta';
+      }
+      if (photoFileInput) photoFileInput.value = '';
+
+      if (item.coordinates) {
+        document.getElementById('form-dest-lat').value = item.coordinates.latitude !== null ? item.coordinates.latitude : '';
+        document.getElementById('form-dest-lng').value = item.coordinates.longitude !== null ? item.coordinates.longitude : '';
+        document.getElementById('form-dest-coords-verified').checked = item.coordinates.verified === true;
+        document.getElementById('form-dest-coords-source').value = item.coordinates.source || '';
+      } else {
+        document.getElementById('form-dest-lat').value = '';
+        document.getElementById('form-dest-lng').value = '';
+        document.getElementById('form-dest-coords-verified').checked = false;
+        document.getElementById('form-dest-coords-source').value = '';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peta Wisata Interaktif — Jelajah Desa Kerta, Payangan</title>
+  <meta name="description" content="Peta interaktif persebaran potensi wisata Desa Kerta berbasis OpenStreetMap dan Leaflet dengan validasi koordinat faktual." />
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+  <!-- App Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/components.css" />
+  <link rel="stylesheet" href="/assets/css/leaflet-custom.css" />
+</head>
+<body>
+
+  <!-- Banner Transparansi & Integritas Data KKN -->
+  <aside class="kkn-disclaimer-banner" role="complementary">
+    <span>📌 <strong>Integritas Peta Digital</strong> — Marker publik hanya dipasang pada koordinat hasil pengukuran faktual.</span>
+  </aside>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Navigasi Utama">
+        <a href="/" class="brand-link" aria-label="Beranda Jelajah Desa Kerta">
+          <img src="/assets/images/brand/logo.svg" alt="Logo Jelajah Desa Kerta" class="brand-logo-img" />
+        </a>
+
+        <button class="nav-toggle" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="main-nav-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-menu" id="main-nav-menu">
+          <li><a href="/" class="nav-link">Beranda</a></li>
+          <li><a href="/katalog" class="nav-link">Katalog Wisata</a></li>
+          <li><a href="/peta" class="nav-link active">Peta Interaktif</a></li>
+          <li><a href="/galeri" class="nav-link">Galeri</a></li>
+          <li><a href="/tentang" class="nav-link">Tentang KKN</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="section">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <div class="section-header">
+        <span class="section-eyebrow">Pemetaan Geografis</span>
+        <h1 class="section-title">Peta Sebaran Potensi Wisata Desa Kerta</h1>
+        <p class="section-desc">
+          Peta ini terhubung dengan basis data spasial OpenStreetMap dan Leaflet.js. Sebagai wujud akuntabilitas, sistem ini secara ketat membedakan antara titik referensi wilayah administratif desa dan titik gerbang destinasi yang sedang dalam proses pendataan koordinat lapangan tim KKN.
+        </p>
+      </div>
+
+      <!-- Layout Dua Kolom: Peta Utama & Daftar Status Survei Lapangan -->
+      <div style="display:grid; grid-template-columns:2.2fr 1fr; gap:2rem; align-items:start;">
+        
+        <!-- Wadah Peta Leaflet -->
+        <div>
+          <div class="map-wrapper">
+            <div id="map-overlay-status" class="map-status-overlay">
+              <strong>Memuat koordinat desa...</strong>
+            </div>
+            
+            <div id="map"></div>
+
+            <!-- Legend Peta -->
+            <div class="map-legend">
+              <div class="map-legend-item">
+                <span class="map-pin-sample pin-admin"></span>
+                <span>Kantor Desa Kerta (Pusat Administrasi)</span>
+              </div>
+              <div class="map-legend-item">
+                <span class="map-pin-sample pin-verified"></span>
+                <span>Destinasi Terverifikasi Lapangan</span>
+              </div>
+              <div class="map-legend-item">
+                <span class="map-pin-sample pin-unverified"></span>
+                <span>Dalam Proses Survei Lapangan</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Petunjuk Aksesibilitas Navigasi Peta -->
+          <div style="margin-top:1rem; font-size:0.8125rem; color:var(--color-text-muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:0.5rem;">
+            <span>Gunakan scroll mouse atau cubit layar untuk memperbesar/memperkecil peta.</span>
+            <span>Data Peta: &copy; OpenStreetMap Kontributor</span>
+          </div>
+        </div>
+
+        <!-- Kolom Kanan: Panel Destinasi dalam Proses Verifikasi Lapangan -->
+        <div>
+          <div style="background:var(--color-bg-card); border:1px solid var(--color-border); border-radius:var(--radius-lg); padding:1.5rem; box-shadow:var(--shadow-sm);">
+            <h3 style="font-size:1.15rem; font-weight:700; color:var(--color-primary-dark); margin-bottom:0.5rem; display:flex; align-items:center; gap:0.5rem;">
+              <span>📋</span>
+              <span>Status Survei Koordinat</span>
+            </h3>
+            <p style="font-size:0.8125rem; color:var(--color-text-muted); line-height:1.5; margin-bottom:1.25rem;">
+              Untuk menjaga akurasi navigasi wisatawan dan menghindari tersesat di perkebunan warga, hanya koordinat gerbang yang telah diukur langsung dengan GPS yang akan dipasang pin rute.
+            </p>
+
+            <div id="map-pending-destinations">
+              <!-- Diisi secara dinamis oleh assets/js/map.js -->
+              <div style="font-size:0.8125rem; color:var(--color-text-subtle);">Memuat daftar survei...</div>
+            </div>
+
+            <!-- Box Panduan Tim KKN & Pengelola Desa -->
+            <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid var(--color-border-light); font-size:0.775rem; color:var(--color-text-muted);">
+              <strong style="color:var(--color-primary-dark); display:block; margin-bottom:0.25rem;">Petunjuk Bagi Surveyor KKN:</strong>
+              Setelah tim melakukan survei titik gerbang menggunakan GPS/smartphone (format desimal WGS84), masukkan nilai latitude dan longitude ke file <code>data/destinations.json</code> dan ubah status menjadi <code>"verified": true</code>.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Jelajah Desa Kerta</h3>
+          <p class="footer-desc">
+            Sistem informasi geografis dan direktori wisata Desa Kerta, Payangan, Gianyar yang akuntabel dan berbasis data terbuka.
+          </p>
+          <div style="font-size:0.8125rem;">
+            Website Resmi Desa: <br />
+            <a href="https://kerta.desa.id" target="_blank" rel="noopener noreferrer" style="color:var(--color-sand); text-decoration:underline;">
+              https://kerta.desa.id
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigasi</h4>
+          <ul class="footer-links">
+            <li><a href="/">Beranda</a></li>
+            <li><a href="/katalog">Katalog Wisata</a></li>
+            <li><a href="/peta">Peta Interaktif</a></li>
+            <li><a href="/galeri">Galeri Foto</a></li>
+            <li><a href="/tentang">Tentang Program KKN</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kategori</h4>
+          <ul class="footer-links">
+            <li><a href="/katalog">Wisata Alam &amp; Jurang</a></li>
+            <li><a href="/katalog">Cagar Budaya Megalitikum</a></li>
+            <li><a href="/katalog">Wisata Religi &amp; Pura</a></li>
+            <li><a href="/katalog">Agrowisata Jeruk &amp; Kopi</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kebijakan Tile OSM</h4>
+          <p style="font-size:0.8125rem; line-height:1.55; color:#9FB0A5;">
+            Layanan tile peta mematuhi pedoman penggunaan OpenStreetMap Tile Usage Policy dengan atribusi yang lengkap dan benar.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span class="current-year">2026</span> Tim KKN Desa Kerta, Payangan, Gianyar, Bali.
+        </div>
+        <div>
+          Peta Digital Terbuka &amp; Terverifikasi
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- Script Data & Logic -->
+  <script src="/data/destinations.js"></script>
+  <script src="/assets/js/data-service.js"></script>
+  <script src="/assets/js/app.js"></script>
+  <script src="/assets/js/map.js"></script>
+</body>
+</html>

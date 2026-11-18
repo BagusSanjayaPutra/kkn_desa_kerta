@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="trekSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E1EDE5"/>
+      <stop offset="100%" stop-color="#C2DCD0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#trekSky)"/>
+  <!-- Lapisan bukit dan lembah pegunungan Payangan -->
+  <path d="M0 220 Q 200 140 450 180 T 800 150 L 800 500 L 0 500 Z" fill="#6B937C" opacity="0.35"/>
+  <path d="M0 260 Q 300 180 580 230 T 800 210 L 800 500 L 0 500 Z" fill="#4D7760" opacity="0.6"/>
+  <path d="M0 320 C 220 270 500 300 800 280 L 800 500 L 0 500 Z" fill="#365C46"/>
+  <!-- Hutan bambu di sisi lembah -->
+  <g stroke="#8FA87B" stroke-width="4">
+    <line x1="620" y1="260" x2="615" y2="400"/>
+    <line x1="635" y1="250" x2="630" y2="390"/>
+    <line x1="650" y1="270" x2="648" y2="410"/>
+    <line x1="665" y1="240" x2="660" y2="400"/>
+    <line x1="680" y1="260" x2="678" y2="420"/>
+  </g>
+  <!-- Area Camping (Tenda di punggung bukit) -->
+  <polygon points="280,360 330,360 305,320" fill="#E28743"/>
+  <polygon points="305,320 330,360 335,360 318,320" fill="#C26A28"/>
+  <polygon points="350,370 410,370 380,325" fill="#3B7A57"/>
+  <!-- Jalur setapak berliku -->
+  <path d="M120 500 Q 220 440 260 410 T 360 380 Q 480 370 560 330" stroke="#877457" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <!-- Badge Label: Transparan & Faktual -->
+  <rect x="25" y="25" width="460" height="42" rx="8" fill="#1C382B" opacity="0.9"/>
+  <circle cx="45" cy="46" r="6" fill="#3B7A57"/>
+  <text x="60" y="51" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF">Jalur Trekking &amp; Potensi Camping Pucak Sari</text>
+  <rect x="25" y="445" width="460" height="32" rx="6" fill="#000000" opacity="0.65"/>
+  <text x="35" y="466" font-family="system-ui, sans-serif" font-size="12" fill="#FFFFFF">Prakiraan Ilustrasi • Foto Asli Menunggu Dokumentasi Lapangan KKN</text>
+</svg>

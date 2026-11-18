@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pengelolaan Kategori Wisata — Admin CMS Desa Kerta</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/assets/css/admin.css" />
+</head>
+<body class="admin-body">
+
+  <!-- Sidebar Navigasi -->
+  <aside class="admin-sidebar">
+    <a href="/admin" class="sidebar-brand">
+      <img src="/assets/images/brand/logo.svg" alt="Logo Desa Kerta" class="sidebar-brand-img" />
+      <div class="sidebar-brand-text">
+        <h2>Desa Kerta</h2>
+        <span>ADMIN CMS</span>
+      </div>
+    </a>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-item">
+        <a href="/admin">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+          Dashboard
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="/admin/objek-wisata">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+          Objek Wisata
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="/admin/galeri">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+          Galeri &amp; Foto
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="/admin/kategori" class="active">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="8" y1="6" x2="21" y2="6"></line>
+            <line x1="8" y1="12" x2="21" y2="12"></line>
+            <line x1="8" y1="18" x2="21" y2="18"></line>
+            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+          </svg>
+          Kategori Wisata
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="/admin/peta">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+            <line x1="8" y1="2" x2="8" y2="18"></line>
+            <line x1="16" y1="6" x2="16" y2="22"></line>
+          </svg>
+          Peta &amp; Koordinat
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="/admin/pengaturan">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+          Pengaturan
+        </a>
+      </li>
+      <li class="sidebar-item" style="margin-top:auto; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.08);">
+        <a href="/" target="_blank" rel="noopener noreferrer">
+          <svg class="sidebar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+          Lihat Website Publik &nearr;
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-user">
+        <div class="user-avatar">AD</div>
+        <div class="user-details">
+          <div class="user-name">Administrator</div>
+          <div class="user-role">Pengelola Konten</div>
+        </div>
+      </div>
+      <button id="btn-admin-logout" title="Keluar dari CMS" style="color:#B2C4B9; background:none; border:none; cursor:pointer;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <polyline points="16 17 21 12 16 7"></polyline>
+          <line x1="21" y1="12" x2="9" y2="12"></line>
+        </svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Area Konten Utama -->
+  <div class="admin-main">
+    <header class="admin-topbar">
+      <div class="topbar-left">
+        <button class="sidebar-toggle-btn" aria-label="Toggle Sidebar">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <div class="admin-breadcrumbs">
+          <a href="/admin">CMS</a>
+          <span>/</span>
+          <strong style="color:var(--admin-primary-dark);">Kategori Wisata</strong>
+        </div>
+      </div>
+
+      <div class="topbar-right">
+        <button id="btn-open-cat-modal" class="btn-admin btn-admin-primary btn-admin-sm">
+          + Tambah Kategori
+        </button>
+      </div>
+    </header>
+
+    <main class="admin-content">
+      <div style="margin-bottom:1.5rem;">
+        <h1 style="font-size:1.5rem; font-weight:800; color:var(--admin-primary-dark);">Pengelolaan Kategori Potensi Wisata</h1>
+        <p style="font-size:0.875rem; color:var(--admin-text-muted);">
+          Atur klasifikasi tema objek wisata. Kategori yang masih digunakan oleh objek wisata dilindungi dari penghapusan demi menjaga integritas data.
+        </p>
+      </div>
+
+      <div class="admin-card">
+        <div class="admin-table-wrapper">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Slug Kategori</th>
+                <th>Nama Kategori</th>
+                <th>Deskripsi</th>
+                <th>Jumlah Objek Terkait</th>
+                <th style="text-align:right;">Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="category-table-tbody">
+              <tr>
+                <td colspan="5" style="text-align:center; padding:2rem; color:var(--admin-text-muted);">
+                  Memuat data kategori...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- MODAL TAMBAH KATEGORI -->
+  <div class="admin-modal-overlay" id="category-modal">
+    <div class="admin-modal" style="max-width:500px;">
+      <div class="admin-modal-header">
+        <h3 class="admin-modal-title">Tambah Kategori Baru</h3>
+        <button type="button" class="btn-close-modal" id="btn-close-cat-modal" style="background:none; border:none; font-size:1.5rem; cursor:pointer; color:var(--admin-text-muted);">&times;</button>
+      </div>
+
+      <form id="category-form">
+        <div class="admin-modal-body">
+          <div class="form-group">
+            <label for="cat-name" class="form-label">Nama Kategori <span style="color:#C62828;">*</span></label>
+            <input type="text" id="cat-name" class="form-control" required placeholder="Contoh: Wisata Edukasi &amp; Kerajinan" />
+          </div>
+
+          <div class="form-group">
+            <label for="cat-slug" class="form-label">Slug (Opsional)</label>
+            <input type="text" id="cat-slug" class="form-control" placeholder="Contoh: edukasi (otomatis jika kosong)" />
+          </div>
+
+          <div class="form-group">
+            <label for="cat-desc" class="form-label">Deskripsi Kategori</label>
+            <textarea id="cat-desc" class="form-control" rows="3" placeholder="Uraian singkat tema kategori ini..."></textarea>
+          </div>
+        </div>
+
+        <div class="admin-modal-footer">
+          <button type="button" class="btn-admin btn-admin-outline" id="btn-cancel-cat">Batal</button>
+          <button type="submit" class="btn-admin btn-admin-primary">Simpan Kategori</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/assets/js/admin-api.js"></script>
+  <script src="/assets/js/admin-auth.js"></script>
+  <script>
+    let categories = [];
+    let destinations = [];
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      await loadData();
+      initEvents();
+    });
+
+    async function loadData() {
+      const catRes = await API.get('/api/categories');
+      const destRes = await API.get('/api/destinations?all=true');
+
+      if (catRes && catRes.ok && Array.isArray(catRes.data)) {
+        categories = catRes.data;
+      }
+      if (destRes && destRes.ok && Array.isArray(destRes.data)) {
+        destinations = destRes.data;
+      }
+
+      renderTable();
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById('category-table-tbody');
+      if (categories.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding:2rem; color:var(--admin-text-muted);">Belum ada kategori yang terdaftar.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = categories.map(cat => {
+        const usageCount = destinations.filter(d => d.category === cat.slug).length;
+
+        return `
+          <tr>
+            <td><code>${AdminUI.escapeHtml(cat.slug)}</code></td>
+            <td><strong>${AdminUI.escapeHtml(cat.name)}</strong></td>
+            <td style="color:var(--admin-text-muted); font-size:0.8125rem;">${AdminUI.escapeHtml(cat.description || '-')}</td>
+            <td>
+              <span style="font-weight:700; color:var(--admin-primary);">${usageCount}</span> objek wisata
+            </td>
+            <td style="text-align:right;">
+              <button class="btn-admin btn-admin-danger btn-admin-sm btn-delete-cat" data-slug="${cat.slug}" data-name="${AdminUI.escapeHtml(cat.name)}" data-count="${usageCount}">
+                Hapus
+              </button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function initEvents() {
+      const modal = document.getElementById('category-modal');
+      const openBtn = document.getElementById('btn-open-cat-modal');
+      const closeBtn = document.getElementById('btn-close-cat-modal');
+      const cancelBtn = document.getElementById('btn-cancel-cat');
+      const form = document.getElementById('category-form');
+
+      openBtn.addEventListener('click', () => {
+        form.reset();
+        modal.classList.add('active');
+      });
+
+      const closeModal = () => {
+        modal.classList.remove('active');
+        form.reset();
+      };
+
+      closeBtn.addEventListener('click', closeModal);
+      cancelBtn.addEventListener('click', closeModal);
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const name = document.getElementById('cat-name').value.trim();
+        const slug = document.getElementById('cat-slug').value.trim();
+        const desc = document.getElementById('cat-desc').value.trim();
+
+        const res = await API.post('/api/categories', { name, slug, description: desc });
+        if (res && res.ok) {
+          AdminUI.toast('Kategori baru berhasil ditambahkan.', 'success');
+          closeModal();
+          await loadData();
+        } else {
+          AdminUI.toast(res.error || 'Gagal menambahkan kategori.', 'error');
+        }
+      });
+
+      document.getElementById('category-table-tbody').addEventListener('click', async (e) => {
+        const deleteBtn = e.target.closest('.btn-delete-cat');
+        if (deleteBtn) {
+          const slug = deleteBtn.getAttribute('data-slug');
+          const name = deleteBtn.getAttribute('data-name');
+          const count = parseInt(deleteBtn.getAttribute('data-count'), 10);
+
+          if (count > 0) {
+            alert(`TIDAK DAPAT DIHAPUS:\nKategori "${name}" masih digunakan oleh ${count} objek wisata. Pindahkan objek wisata terkait ke kategori lain terlebih dahulu.`);
+            return;
+          }
+
+          if (confirm(`Apakah Anda yakin ingin menghapus kategori "${name}"?`)) {
+            const res = await API.delete(`/api/categories/${encodeURIComponent(slug)}`);
+            if (res && res.ok) {
+              AdminUI.toast('Kategori berhasil dihapus.', 'success');
+              await loadData();
+            } else {
+              AdminUI.toast(res.error || 'Gagal menghapus kategori.', 'error');
+            }
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>

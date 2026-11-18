@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "alam",
+    "name": "Wisata Alam",
+    "description": "Lanskap perbukitan, tebing, lembah hijau, dan hutan tropis",
+    "badgeClass": "badge-cat-alam"
+  },
+  {
+    "slug": "budaya",
+    "name": "Cagar Budaya",
+    "description": "Peninggalan sejarah purbakala megalitikum dan artefak kuno",
+    "badgeClass": "badge-cat-budaya"
+  },
+  {
+    "slug": "religi",
+    "name": "Wisata Religi",
+    "description": "Pura sakral dan jejak perjalanan suci Ida Rsi Markandeya",
+    "badgeClass": "badge-cat-religi"
+  },
+  {
+    "slug": "agro",
+    "name": "Agrowisata",
+    "description": "Perkebunan jeruk rakyat khas Payangan dan tanaman kopi",
+    "badgeClass": "badge-cat-agro"
+  }
+]

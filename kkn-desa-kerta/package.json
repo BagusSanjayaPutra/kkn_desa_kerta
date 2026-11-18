@@ -1,0 +1,27 @@
+{
+  "name": "jelajah-desa-kerta",
+  "version": "1.0.0",
+  "description": "Portal Informasi dan Dokumentasi Potensi Wisata Desa Kerta, Payangan, Gianyar, Bali — Program KKN Mahasiswa",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node scripts/verify-data.js",
+    "test:flow": "node scripts/test-cms-flow.js",
+    "serve:py": "python -m http.server 8080"
+  },
+  "keywords": [
+    "kkn",
+    "desa-kerta",
+    "payangan",
+    "gianyar",
+    "bali",
+    "pariwisata",
+    "desa-wisata",
+    "gis",
+    "leaflet"
+  ],
+  "author": "Tim KKN Desa Kerta",
+  "license": "MIT",
+  "devDependencies": {
+    "@vercel/node": "^23.0.1"
+  }
+}

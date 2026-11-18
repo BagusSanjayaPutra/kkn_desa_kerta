@@ -1,0 +1,244 @@
+window.DESA_KERTA_DESTINATIONS = [
+  {
+    "id": "WIS-001",
+    "slug": "munduk-asri",
+    "name": "Objek Wisata Alam Munduk Asri",
+    "category": "alam",
+    "shortDescription": "Daya tarik wisata alam tebing dan perbukitan berhawa sejuk dengan formasi akar pohon Taep raksasa yang artistik serta perkebunan jeruk di jalur Payangan-Kintamani.",
+    "description": "Munduk Asri merupakan salah satu objek wisata alam di Desa Kerta yang menawarkan panorama lembah asri dengan pepohonan tropis dan tebing jurang yang indah. Daya tarik khas tempat ini adalah formasi akar raksasa dari pohon Taep yang merambat di dinding tebing batu. Di kawasan ini juga terdapat kebun jeruk milik warga sekitar, lorong tebing, jembatan dan instalasi bambu, serta bale-bale santai. Informasi ini bersumber dari publikasi resmi website Pemerintah Desa Kerta (kerta.desa.id).",
+    "address": "Jl. Raya Payangan - Kintamani, Desa Kerta, Kecamatan Payangan, Kabupaten Gianyar, Bali 80572",
+    "coordinates": {
+      "latitude": null,
+      "longitude": null,
+      "verified": false,
+      "source": "Menunggu verifikasi titik GPS lapangan tim survei KKN",
+      "verifiedAt": null
+    },
+    "photos": [],
+    "facilities": [
+      "Area parkir kendaraan",
+      "Toilet umum",
+      "Bale bengong / pondok istirahat",
+      "Spot foto lanskap & jembatan bambu",
+      "Warung makanan & minuman ringan"
+    ],
+    "accessNotes": "Terletak di pinggir jalur utama Payangan–Kintamani (sekitar 3 km ke arah utara dari Pasar Payangan). Dari jalan raya utama, terdapat plang nama Munduk Asri lalu masuk gang perkebunan jeruk sekitar 100-300 meter.",
+    "openingHours": "Sekitar pukul 08.00 - 18.00 WITA (dianjurkan konfirmasi langsung saat survei lapangan)",
+    "entranceFee": "Sekitar Rp10.000 - Rp15.000 per orang (perkiraan tiket masuk umum, menunggu konfirmasi pengelola)",
+    "contact": "Sedang dalam proses konfirmasi kontak resmi pengelola",
+    "sources": [
+      "Website Resmi Desa Kerta (kerta.desa.id)",
+      "Pemerintah Desa Kerta & Publikasi Pariwisata Daerah Gianyar"
+    ],
+    "verificationStatus": "partially_verified",
+    "lastUpdated": "2026-10-13",
+    "publicationStatus": "published",
+    "verificationNotes": "Terdokumentasi pada survei awal KKN dan portal resmi desa.",
+    "createdAt": "2026-10-13T14:00:00Z"
+  },
+  {
+    "id": "WIS-002",
+    "slug": "situs-sarkofagus-margatengah",
+    "name": "Situs Cagar Budaya Sarkofagus Margatengah",
+    "category": "budaya",
+    "shortDescription": "Situs purbakala zaman Megalitikum berupa kubur batu (sarkofagus) yang ditemukan warga pada tahun 1974 di Banjar Margatengah, terdaftar sebagai cagar budaya.",
+    "description": "Situs Sarkofagus Margatengah merupakan bukti sejarah peradaban zaman prasejarah (Megalitikum) di Desa Kerta. Sarkofagus atau kubur batu ini ditemukan pertama kali secara tidak sengaja oleh warga setempat pada tahun 1974 saat membajak tanah di areal perkebunan. Dari hasil penelitian arkeologi dan Balai Pelestarian Cagar Budaya (BPCB), di dalamnya ditemukan artefak bekal kubur berbahan perunggu seperti gelang dan anting. Situs ini dirawat oleh juru pelihara setempat dan dikelilingi oleh lanskap perkebunan jeruk rakyat yang tenang.",
+    "address": "Banjar Margatengah, Desa Kerta, Kecamatan Payangan, Kabupaten Gianyar, Bali 80572",
+    "coordinates": {
+      "latitude": null,
+      "longitude": null,
+      "verified": false,
+      "source": "Menunggu verifikasi titik GPS lapangan tim survei KKN",
+      "verifiedAt": null
+    },
+    "photos": [
+      {
+        "url": "assets/images/destinations/sarkofagus-1.svg",
+        "caption": "Ilustrasi cagar budaya Sarkofagus Margatengah (Menunggu dokumentasi foto lapangan mahasiswa KKN)",
+        "source": "Dokumentasi Tim KKN"
+      }
+    ],
+    "facilities": [
+      "Area cagar budaya beratap pelindung",
+      "Didampingi juru pelihara cagar budaya lokal"
+    ],
+    "accessNotes": "Terletak di kawasan Banjar Margatengah. Dapat dicapai melalui jalan desa beraspal dan jalan lingkungan pemukiman/perkebunan.",
+    "openingHours": "Dianjurkan berkunjung pada pagi atau siang hari dengan konfirmasi terlebih dahulu kepada juru pelihara",
+    "entranceFee": "Donasi sukarela untuk pelestarian cagar budaya (belum ditetapkan tarif resmi)",
+    "contact": "Juru pelihara cagar budaya Banjar Margatengah (kontak sedang diverifikasi)",
+    "sources": [
+      "Website Resmi Desa Kerta (kerta.desa.id)",
+      "Balai Pelestarian Cagar Budaya (BPCB)",
+      "Dokumentasi Budaya Gianyar"
+    ],
+    "verificationStatus": "partially_verified",
+    "lastUpdated": "2026-10-13",
+    "publicationStatus": "published",
+    "verificationNotes": "Terdokumentasi pada survei awal KKN dan portal resmi desa.",
+    "createdAt": "2026-10-13T14:00:00Z"
+  },
+  {
+    "id": "WIS-003",
+    "slug": "pura-alas-angker",
+    "name": "Pura Alas Angker (Situs Spiritual & Sejarah Desa)",
+    "category": "religi",
+    "shortDescription": "Tempat persembahyangan suci umat Hindu yang lekat dengan sejarah perjalanan spiritual Ida Rsi Markandeya serta filosofi asal-usul nama Desa Kerta.",
+    "description": "Pura Alas Angker memiliki nilai historis dan spiritual yang sangat mendalam bagi krama Desa Kerta. Berdasarkan penuturan sejarah lokal dan babad perjalanan suci, wilayah ini berkaitan dengan perjalanan Maha Rsi Markandeya pada abad ke-8. Hutan yang semula dikenal sangat lebat dan angker (Wana/Alas Angker) kemudian menjadi tempat memohon keselamatan hingga wilayah sekitarnya menjadi subur dan tenteram (Kerta). Pura ini dikeramatkan dan menjadi pusat kegiatan keagamaan krama adat.",
+    "address": "Desa Kerta, Kecamatan Payangan, Kabupaten Gianyar, Bali",
+    "coordinates": {
+      "latitude": null,
+      "longitude": null,
+      "verified": false,
+      "source": "Menunggu verifikasi titik GPS lapangan tim survei KKN",
+      "verifiedAt": null
+    },
+    "photos": [
+      {
+        "url": "assets/images/destinations/pura-alas-angker-1.svg",
+        "caption": "Ilustrasi kawasan Pura Alas Angker (Menunggu dokumentasi foto lapangan mahasiswa KKN)",
+        "source": "Dokumentasi Tim KKN"
+      }
+    ],
+    "facilities": [
+      "Area persembahyangan suci krama",
+      "Kawasan pelestarian lingkungan desa"
+    ],
+    "accessNotes": "Merupakan kawasan suci persembahyangan. Pengunjung wajib mematuhi etika busana adat Bali (kain kamen dan senteng), menjaga kesucian pikiran dan tutur kata, serta berkoordinasi dengan pengempon pura.",
+    "openingHours": "Terbuka untuk persembahyangan; kunjungan luar wajib seizin prajuru adat",
+    "entranceFee": "Bukan tempat wisata komersial (punia sukarela umat)",
+    "contact": "Prajuru Desa Adat Kerta (sedang diverifikasi)",
+    "sources": [
+      "Jejaring Desa Wisata Kemenparekraf (Jadesta - Desa Wisata Bali Ditha)",
+      "Babad Penuturan Desa Adat Kerta"
+    ],
+    "verificationStatus": "partially_verified",
+    "lastUpdated": "2026-10-13",
+    "publicationStatus": "published",
+    "verificationNotes": "Terdokumentasi pada survei awal KKN dan portal resmi desa.",
+    "createdAt": "2026-10-13T14:00:00Z"
+  },
+  {
+    "id": "WIS-004",
+    "slug": "agrowisata-kebun-jeruk-kopi",
+    "name": "Agrowisata Perkebunan Jeruk & Kopi Kerta",
+    "category": "agro",
+    "shortDescription": "Lanskap perkebunan rakyat penghasil komoditas jeruk manis dan kopi di kawasan dataran tinggi Payangan yang beriklim sejuk.",
+    "description": "Desa Kerta terkenal sebagai salah satu sentra perkebunan jeruk di Kecamatan Payangan yang berbatasan langsung dengan Kintamani. Di sepanjang jalur Banjar Pilan, Banjar Margatengah, dan sekitarnya terhampar kebun jeruk dan tanaman kopi yang subur. Pada musim panen raya, wisatawan berkesempatan menikmati suasana kebun, berinteraksi dengan kelompok tani lokal, dan merasakan pengalaman petik jeruk langsung.",
+    "address": "Banjar Pilan, Banjar Margatengah, dan sekitarnya, Desa Kerta, Kec. Payangan, Gianyar",
+    "coordinates": {
+      "latitude": null,
+      "longitude": null,
+      "verified": false,
+      "source": "Menunggu verifikasi titik GPS lapangan tim survei KKN",
+      "verifiedAt": null
+    },
+    "photos": [
+      {
+        "url": "assets/images/destinations/kebun-jeruk-1.svg",
+        "caption": "Ilustrasi lanskap perkebunan jeruk Desa Kerta (Menunggu dokumentasi foto lapangan mahasiswa KKN)",
+        "source": "Dokumentasi Tim KKN"
+      }
+    ],
+    "facilities": [
+      "Lanskap perkebunan terbuka",
+      "Akses jalan desa beraspal"
+    ],
+    "accessNotes": "Akses mudah melalui jalan utama desa. Untuk memasuki kebun milik warga, pengunjung diwajibkan meminta izin kepada pemilik kebun atau kelompok tani setempat.",
+    "openingHours": "Mengikuti jam kerja petani setempat (umumnya 07.00 - 17.00 WITA)",
+    "entranceFee": "Belum dikonfirmasi (sesuai kesepakatan petik buah dengan petani lokal)",
+    "contact": "Kelompok Tani / Gapoktan Desa Kerta (sedang diverifikasi)",
+    "sources": [
+      "Profil Potensi Pertanian Desa Kerta (kerta.desa.id)",
+      "Jejaring Desa Wisata Kemenparekraf"
+    ],
+    "verificationStatus": "pending_verification",
+    "lastUpdated": "2026-10-13",
+    "publicationStatus": "published",
+    "verificationNotes": "Terdokumentasi pada survei awal KKN dan portal resmi desa.",
+    "createdAt": "2026-10-13T14:00:00Z"
+  },
+  {
+    "id": "WIS-005",
+    "slug": "potensi-trekking-camping-pucak-sari",
+    "name": "Jalur Trekking & Potensi Camping Ground Pucak Sari",
+    "category": "alam",
+    "shortDescription": "Potensi rute penjelajahan alam pedesaan, lembah hijau, serta area perkemahan yang sedang didata dalam program kerja KKN.",
+    "description": "Kondisi topografi Desa Kerta yang berbukit dengan hawa sejuk menyimpan potensi untuk kegiatan rekreasi alam aktif seperti trekking pedesaan, susur kebun dan hutan bambu, hingga area perkemahan (camping ground) di kawasan dataran tinggi Pucak Sari. Destinasi ini merupakan bagian dari agenda eksplorasi lapangan mahasiswa KKN bersama pemuda dan kelompok pengelola desa wisata untuk memetakan rute yang aman dan berkelanjutan.",
+    "address": "Desa Kerta, Kecamatan Payangan, Kabupaten Gianyar, Bali",
+    "coordinates": {
+      "latitude": null,
+      "longitude": null,
+      "verified": false,
+      "source": "Menunggu verifikasi titik GPS lapangan tim survei KKN",
+      "verifiedAt": null
+    },
+    "photos": [
+      {
+        "url": "assets/images/destinations/trekking-kerta-1.svg",
+        "caption": "Ilustrasi jalur jelajah alam pedesaan Desa Kerta (Menunggu dokumentasi foto lapangan mahasiswa KKN)",
+        "source": "Dokumentasi Tim KKN"
+      }
+    ],
+    "facilities": [
+      "Informasi fasilitas sedang diverifikasi tim survei KKN"
+    ],
+    "accessNotes": "Rute jelajah alam memerlukan pemandu lokal dan perlengkapan trekking yang memadai. Kondisi rute sedang dalam pemetaan.",
+    "openingHours": "Informasi belum tersedia (menunggu hasil koordinasi dengan Pokdarwis desa)",
+    "entranceFee": "Belum dikonfirmasi",
+    "contact": "Pokdarwis / Pengelola Desa Wisata Desa Kerta (sedang diverifikasi)",
+    "sources": [
+      "Dokumen Pengusulan Desa Wisata Kerta (Bali Ditha)",
+      "Catatan Observasi Awal KKN"
+    ],
+    "verificationStatus": "pending_verification",
+    "lastUpdated": "2026-10-13",
+    "publicationStatus": "published",
+    "verificationNotes": "Terdokumentasi pada survei awal KKN dan portal resmi desa.",
+    "createdAt": "2026-10-13T14:00:00Z"
+  },
+  {
+    "id": "WIS-006",
+    "slug": "objek-wisata-sekar-bumi-farm",
+    "name": "Objek Wisata Sekar Bumi Farm",
+    "category": "alam",
+    "shortDescription": "Sekar Bumi Tropical Farm merupakan destinasi agrowisata di Desa Kerta, Kecamatan Payangan, Kabupaten Gianyar, Bali, yang menawarkan keindahan kebun bunga tropis dan beragam tanaman hias. Pengunjung dapat mengenal dunia budidaya bunga, menikmati suasana perkebunan, serta menjelajahi pilihan kegiatan edukasi dan rekreasi alam.",
+    "description": "Sekar Bumi Tropical Farm — Pesona Agrowisata Bunga Tropis di Desa Kerta\n\nSekar Bumi Tropical Farm merupakan destinasi agrowisata yang berada di Desa Kerta, Kecamatan Payangan, Kabupaten Gianyar, Bali. Tempat ini dikenal sebagai kawasan budidaya bunga potong tropis dan tanaman hias yang memiliki daya tarik bagi pencinta tanaman, wisatawan, serta pengunjung yang ingin mengenal lebih dekat dunia pertanian dan perkebunan.\n\nSalah satu daya tarik Sekar Bumi Tropical Farm adalah koleksi bunga tropis, termasuk Heliconia, yang memiliki bentuk dan warna khas. Selain menikmati keindahan tanaman, pengunjung berkesempatan mengenal proses budidaya bunga, mulai dari penanaman hingga perawatan tanaman, sesuai dengan program dan aktivitas yang tersedia.\n\nSebagai destinasi yang menggabungkan pertanian dan pariwisata, Sekar Bumi Tropical Farm juga dikenal menawarkan kegiatan edukasi serta aktivitas luar ruang, seperti trekking, bersepeda, berkemah, dan kegiatan kelompok tertentu sesuai ketersediaan program. Aktivitas tersebut dapat menjadi pilihan bagi rombongan keluarga, pelajar, komunitas, maupun kelompok yang ingin memperoleh pengalaman wisata berbasis alam dan pembelajaran.\n\nKeberadaan Sekar Bumi Tropical Farm turut memperlihatkan potensi Desa Kerta dalam mengembangkan agrowisata yang memadukan kegiatan pertanian, keindahan tanaman tropis, dan pengalaman edukatif. Destinasi ini menjadi salah satu pilihan bagi pengunjung yang ingin mengenal kekayaan tanaman tropis sekaligus mengeksplorasi potensi wisata di wilayah Payangan, Kabupaten Gianyar.\n\nSebelum berkunjung, wisatawan disarankan untuk menghubungi pengelola terlebih dahulu guna memastikan jam kunjungan, ketersediaan aktivitas, serta ketentuan kunjungan yang berlaku.",
+    "address": "Jl. Raya Sekar Bumi No. 99, Banjar Buhu, Desa Kerta, Kecamatan Payangan, Kabupaten Gianyar, Bali 80572, Indonesia.",
+    "coordinates": {
+      "latitude": -8.343551586706921,
+      "longitude": 115.29182431241956,
+      "verified": true,
+      "source": "Survei GPS Lapangan Tim KKN",
+      "verifiedAt": null
+    },
+    "photos": [
+      {
+        "url": "assets/images/destinations/uploaded/1791895503488-TropicalCottageRefle-7eae4b866af1.png",
+        "caption": "Objek Wisata Sekar Bumi Farm",
+        "source": "Dokumentasi Lapangan Tim KKN Desa Kerta"
+      }
+    ],
+    "facilities": [
+      "Kebun bunga tropis",
+      "kegiatan edukasi perkebunan",
+      "workshop merangkai bunga",
+      "area kegiatan kelompok",
+      "camping",
+      "trekking",
+      "bersepeda",
+      "dan kegiatan outbound."
+    ],
+    "accessNotes": "Roda 2 & Roda 4",
+    "openingHours": "08.00–18.00 WITA",
+    "entranceFee": "Gratis",
+    "contact": "0815-4707-744",
+    "sources": [
+      "https://www.semuabis.com/sekar-bumi-tropical-farm-0815-4707-744"
+    ],
+    "verificationStatus": "pending_verification",
+    "publicationStatus": "published",
+    "verificationNotes": "Data baru ditambahkan melalui CMS admin.",
+    "createdAt": "2026-10-13T12:45:03.510Z",
+    "lastUpdated": "2026-10-14"
+  }
+];
